@@ -9,12 +9,28 @@
         </span>
       </div> -->
       <div class="slds-media__body">
-        <h2>
-          <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="[object Object]">
-            <span class="slds-text-heading_small">{{ data.label }}</span>
-          </a>
-        </h2>
+        <div class="slds-grid">
+
+          <div>
+            <span class="slds-avatar slds-avatar_circle">
+              <span class="slds-icon_container slds-icon-standard-user" title="Description of icon when needed">
+                <img class="slds-icon" src="https://e-mark.atlassian.net/secure/useravatar?ownerId=michaelowens&avatarId=11100&noRedirect=true" alt="">
+                <span class="slds-assistive-text">Description of icon</span>
+              </span>
+            </span>
+          </div>
+
+          <div class="slds-col slds-p-left_x-small">
+            <h2>
+              <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="[object Object]">
+                <span class="slds-text-heading_small">{{ data.label }}</span>
+              </a>
+            </h2>
+          </div>
+
+        </div>
       </div>
+
     </header>
     <div class="slds-no-flex">
       <button class="slds-button slds-button_icon slds-button_icon-border slds-button_icon-x-small">
