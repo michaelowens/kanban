@@ -3,8 +3,8 @@
 namespace Core;
 
 class Database {
-  private $config = [
-    'file' => 'sqlite.db'
+  public $config = [
+    'file' => __DIR__ . '/../sqlite.db'
   ];
 
   public $pdo;
@@ -25,18 +25,24 @@ class Database {
     return $this;
   }
 
+  public function isInstalled() {
+    $sql = $this->query("
+      SELECT count(name)
+      FROM sqlite_master
+      WHERE type = 'table' AND name = 'projects'
+    ");
+    $sql->execute(); 
+    $number_of_rows = $sql->fetchColumn(); 
+    return $number_of_rows > 0;
+  }
+
   public function getTables() {
-    $stmt = $this->pdo->query("
+    $tables = $this->fetch("
       SELECT name
       FROM sqlite_master
       WHERE type = 'table'
       ORDER BY name
     ");
-
-    $tables = [];
-    while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-      $tables[] = $row['name'];
-    }
 
     return $tables;
   }
@@ -50,7 +56,7 @@ class Database {
 
     $tables = [];
     while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-      $tables[] = $row['name'];
+      $tables[] = $row;
     }
 
     return $tables;
