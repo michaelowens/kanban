@@ -18,3 +18,7 @@
 .card-wrapper:not(:last-child) {
   margin-bottom: 10px;
 }
+
+.slds-card .slds-col h2 {
+	line-height: 2.6;
+}
