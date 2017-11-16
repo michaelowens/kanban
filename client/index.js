@@ -1,7 +1,7 @@
-import App from './App.js'
+import routes from './Routes.js'
 
+/** Wrapper for fetch */
 function VueFetch() {
-  console.log('VueFetch')
 }
 
 VueFetch.install = (Vue, options) => {
@@ -20,8 +20,17 @@ VueFetch.install = (Vue, options) => {
 Vue.use(VueFetch)
 Vue.use(window.DragAndDropList)
 
-new Vue({
-  components: {App},
-  el: '#app',
-  template: '<App />'
+const router = new VueRouter({
+  routes, // short for `routes: routes`
+  mode: 'history'
 })
+
+// new Vue({
+//   components: {App},
+//   el: '#app',
+//   template: '<App />'
+// })
+
+const app = new Vue({
+  router
+}).$mount('#app')

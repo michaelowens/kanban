@@ -1,3 +1,18 @@
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+
+#app {
+  height: 100vh;
+}
+
+.setup {
+  height: 100vh;
+}
+
 .slds-nav-vertical__action > span {
   display: block;
 }

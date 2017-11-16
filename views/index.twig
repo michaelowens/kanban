@@ -8,11 +8,14 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.3/dist/vue.min.js"></script>
   <script src="https://unpkg.com/lodash@4.17.4/lodash.js"></script>
   <script>window.each = _.each</script>
+  <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
   <script src="https://unpkg.com/vddl@0.6.0/dist/vddl.js"></script>
 </head>
 <body>
 
-  <div id="app"></div>
+  <div id="app">
+    <router-view></router-view>
+  </div>
 
   <script type="module" src="client/index.js"></script>
 

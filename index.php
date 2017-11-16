@@ -11,9 +11,9 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
   'twig.path' => __DIR__ . '/views',
 ));
 
-$app->get('/', function () use ($app) {
+$app->get('/{page}', function (Silex\Application $app, $page) {
   return $app['twig']->render('index.twig');
-});
+})->value('page', '');
 
 $app->mount('/api', include 'server/api.php');
 
