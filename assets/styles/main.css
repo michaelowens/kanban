@@ -1,0 +1,20 @@
+.slds-nav-vertical__action > span {
+  display: block;
+}
+
+.board {
+  margin-top: 20px;
+}
+
+.slds-col {
+  width: 100%;
+}
+
+.vddl-list {
+  min-height: 100px;
+  width: 100%;
+}
+
+.card-wrapper:not(:last-child) {
+  margin-bottom: 10px;
+}
