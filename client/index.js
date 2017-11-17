@@ -1,21 +1,5 @@
 import routes from './Routes.js'
-
-/** Wrapper for fetch */
-function VueFetch() {
-}
-
-VueFetch.install = (Vue, options) => {
-  Vue.prototype.$fetch = {
-    json (url) {
-      return new Promise((resolve, reject) => {
-        fetch(url)
-          .then(response => {
-            resolve(response.json())
-          })
-      })
-    }
-  }
-}
+import VueFetch from './VueFetch.js'
 
 Vue.use(VueFetch)
 Vue.use(window.DragAndDropList)
