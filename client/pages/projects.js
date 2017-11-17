@@ -47,14 +47,6 @@ export default comp({
   },
 
   created () {
-    this.$fetch.json('/api/installed')
-      .then(installed => {
-        this.installed = installed
-        if (!installed) {
-          return this.$router.push('/setup')
-        }
-
-        this.getProjects()
-      })
+    this.getProjects()
   }
 })

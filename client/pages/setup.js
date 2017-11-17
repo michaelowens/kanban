@@ -14,20 +14,18 @@ export default comp({
 
   methods: {
     install () {
-      if (!this.installed) {
-        this.$fetch.json('/api/setup_db').then(response => {
-          if (response) {
-            this.$router.push('/backlog')
-          } else {
-            this.error = true
-          }
-        })
-      }
+      this.$fetch.json('/api/setup_db').then(response => {
+        if (response) {
+          this.$router.push('/backlog')
+        } else {
+          this.error = true
+        }
+      })
     }
   },
 
   created () {
-    this.$fetch.json('/api/installed')
-      .then(installed => this.installed = installed)
+    // this.$fetch.json('/api/installed')
+    //   .then(installed => this.installed = installed)
   }
 })
