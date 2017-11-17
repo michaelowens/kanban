@@ -1,16 +1,16 @@
 <div>
-  <div><navbar></navbar></div>
-  <div><sidenav></sidenav></div>
+  <navbar></navbar>
+  <sidenav></sidenav>
 
-  <div class="board_top_row">
-    <h1>Projects</h1>
-    <div>
+  <div class="canvas">
+    <h1>
+      Projects
       <a href="#" @click="openAddProject" class="btn secondary with-icon">
         <img src="assets/icons/plus.svg">
         New project
       </a>
-    </div>
-
+    </h1>
+    
     <div v-if="showAddProject">
       <input type="text" v-model="newProject.name" placeholder="Project name">
       <a href="#" @click="addProject" class="btn primary with-icon">

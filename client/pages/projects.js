@@ -51,10 +51,10 @@ export default comp({
       .then(installed => {
         this.installed = installed
         if (!installed) {
-          this.$router.push('/setup')
+          return this.$router.push('/setup')
         }
-      })
 
-    this.getProjects()
+        this.getProjects()
+      })
   }
 })
