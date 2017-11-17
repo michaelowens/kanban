@@ -1,0 +1,57 @@
+/*==============================
+=            Inputs            =
+==============================*/
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+	background: var(--white);
+	width: 320px;
+	height: 32px;
+	border: 1px solid var(--border-vivid);
+	border-radius: 4px;
+	color: var(--black-subtle);
+	outline: none;
+	display: block;
+	margin: 12px 0 16px 0;
+	padding: 8px 12px;
+	transition: color .2s, border-color .2s, box-shadow .2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+	border-color: var(--btn-primary);
+	color: var(--black);
+	box-shadow: 0 0 3px rgba(0, 118, 222, .5);
+	transition: color .2s, border-color .2s, box-shadow .2s;
+}
+
+textarea {
+	min-height: 100px;
+	resize: none;
+}
+
+select {
+	padding: 5px 12px;
+	background-image: url('../icons/chevron-down.svg');
+	background-position-x: 295px;
+	background-position-y: 12px;
+	background-repeat: no-repeat;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.input-row {
+	width: 100%;
+	display: block;
+	margin-bottom: 16px;
+}
+
+.input-row:last-of-type {
+	margin-top: 32px;
+	margin-bottom: 0;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="5px" viewBox="0 0 10 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Card_quick_task" transform="translate(-292.000000, -22.000000)" fill="#54698D">
+            <g id="Cards---Related-List-">
+                <path d="M292.342743,22 L301.671277,22 C301.934795,22 302.119257,22.2708333 301.908443,22.4583333 L297.349583,26.875 C297.191473,27.0416667 296.848899,27.0416667 296.690789,26.875 L292.079225,22.4583333 C291.894763,22.2708333 292.052874,22 292.342743,22 Z" id="Mask"></path>
+            </g>
+        </g>
+    </g>
+</svg>
