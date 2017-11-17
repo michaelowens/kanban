@@ -13,6 +13,15 @@ body {
   height: 100vh;
 }
 
+.setup .setup-container {
+  /*height: 500px;*/
+}
+
+.setup .setup-card-body {
+  height: 50vh;
+  /*width: 100vh;*/
+}
+
 .slds-nav-vertical__action > span {
   display: block;
 }

@@ -1,0 +1,52 @@
+<div class="slds-grid sld slds-grid_vertical">
+  <div>
+    <navbar></navbar>
+  </div>
+  <div>
+    <div class="slds-grid">
+      <div>
+        <sidenav></sidenav>
+      </div>
+      <div class="slds-col slds-p-around_medium">
+        <h1 class="slds-text-heading_large">Backlog</h1>
+
+        <!-- Board -->
+        <div class="board slds-grid slds-grid_align-spread slds-grid_pull-padded-medium">
+          <div class="slds-col slds-p-horizontal_medium" v-for="(list, listName) in lists">
+            <vddl-list :list="list" :horizontal="false">
+              <vddl-draggable class="card-wrapper" v-for="(item, index) in list" :key="item.id"
+                :draggable="item"
+                :index="index"
+                :wrapper="list"
+                effect-allowed="move">
+                <card :data="item"></card>
+              </vddl-draggable>
+              <vddl-placeholder class="red">drop here</vddl-placeholder>
+            </vddl-list>
+          </div>
+          <!-- <div class="slds-col slds-p-horizontal_medium">
+            <card></card>
+          </div>
+          <div class="slds-col slds-p-horizontal_medium">
+            <card></card>
+          </div>
+          <div class="slds-col slds-p-horizontal_medium">
+            <card></card>
+          </div> -->
+        </div>
+
+        <!--<h1 class="slds-text-heading_large">Welcome to KanBan!!</h1>
+
+        <p>This is loaded {{ how }}</p>
+
+        <p>Ran installer? {{ installed }}</p>
+
+        <h2>Projects:</h2>
+
+        <ul>
+          <li v-for="project in projects">{{ project.project_name }}</li>
+        </ul>-->
+      </div>
+    </div>
+  </div>
+</div>
