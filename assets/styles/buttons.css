@@ -2,6 +2,7 @@
 =            Buttons            =
 ===============================*/
 .btn {
+	background: transparent;
 	height: 32px;
 	border-radius: 4px;
 	border: 1px solid var(--white);
@@ -12,4 +13,32 @@
 	text-align: center;
 	outline: none;
 	display: inline-block;
+	transition: background .2s, border-color .2s;
+}
+
+.btn:hover {
+	background: rgba(255, 255, 255, 0.1);
+	transition: background .2s;
+}
+
+.primary {
+	background: var(--btn-primary);
+	border-color: var(--btn-primary);
+}
+
+.primary:hover {
+	background: var(--btn-primary-hover);
+	border-color: var(--btn-primary-hover);
+	transition: background .2s, border-color .2s;
+}
+
+.secondary {
+	background: var(--white);
+	border-color: var(--border);
+	color: var(--black);
+}
+
+.with-icon img {
+	float: left;
+	margin: 1px 10px 0 0;
 }

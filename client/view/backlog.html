@@ -3,7 +3,17 @@
   <div><sidenav></sidenav></div>
 
         <!-- Board -->
-          <div class="board">
+          <div class="board_top_row">
+            <div><h1>Backlog</h1></div>
+            <div>
+                <a href="#" class="btn secondary with-icon">
+                  <img src="assets/icons/plus.svg">
+                  Add task
+                </a>
+            </div>
+          </div>
+
+          <div class="board">            
             <div class="col" v-for="(list, listName) in lists">
               <vddl-list :list="list" :horizontal="false">
                 <vddl-draggable class="card-wrapper" v-for="(item, index) in list" :key="item.id"

@@ -18,6 +18,8 @@
 	--black: #16325C;
 	--border: #D8DDE6;
 	--green: #4BC076;
+	--btn-primary: #70B3F8;
+	--btn-primary-hover: #2B8EE5;
 }
 
 * {
@@ -44,5 +46,7 @@ body {
   height: 100vh;
 }
 
-
-
+.vddl-list {
+	min-height: 110px;
+	width: 100%;
+}

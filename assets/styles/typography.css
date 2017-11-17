@@ -19,6 +19,12 @@
     	 url(../lightning/fonts/webfonts/SalesforceSans-Light.woff2);
 }
 
+h1 {
+	font: 28px var(--font-family-bold);
+	color: var(--black);
+    margin: 0;
+}
+
 p {
 	font: 12px var(--font-family);
 	color: var(--black);
