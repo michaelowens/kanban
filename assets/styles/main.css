@@ -13,8 +13,10 @@ body {
   height: 100vh;
 }
 
-.slds-nav-vertical__action > span {
+.slds-nav-vertical__action {
   display: block;
+  text-align: center;
+  padding: 20px;
 }
 
 .board {
