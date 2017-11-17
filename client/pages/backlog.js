@@ -50,7 +50,7 @@ export default comp({
           this.$router.push('/setup')
         }
       })
-    this.$fetch.json('/api/projects')
+    this.$fetch.json('/api/project/list')
       .then(projects => this.projects = projects)
   }
 })

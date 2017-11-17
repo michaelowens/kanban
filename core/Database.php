@@ -62,7 +62,25 @@ class Database {
     return $tables;
   }
 
-  public function exec($query) {
-    return $this->pdo->exec($query);
+  public function exec($q) {
+    return $this->pdo->exec($q);
+  }
+
+  public function prepare($q) {
+    return $this->pdo->prepare($q);
+  }
+
+  public function insert($q, $params) {
+    $stmt = $this->prepare($q);
+
+    if (!$stmt) {
+      return false;
+    }
+
+    foreach ($params as $param => &$value) {
+      $stmt->bindParam(':' . $param, $value);
+    }
+
+    return $stmt->execute();
   }
 }
