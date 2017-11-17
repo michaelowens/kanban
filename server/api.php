@@ -34,10 +34,7 @@ $api->get('/setup_db', function () use ($app, $db) {
   //     }
   // }
   $success = $db->exec(file_get_contents('schema.sql'));
-  if (!$success) {
-    var_dump($db->pdo->errorInfo());
-  }
-  return $app->json($success);
+  return $app->json($db->pdo->errorCode() === '00000');
 });
 
 $api->get('/installed', function () use ($app, $db) {

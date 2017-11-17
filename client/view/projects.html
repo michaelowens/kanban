@@ -1,0 +1,22 @@
+<div class="canvas">
+  <h1>
+    Projects
+    <a href="#" @click="openAddProject" class="btn secondary with-icon">
+      <img src="assets/icons/plus.svg">
+      New project
+    </a>
+  </h1>
+  
+  <div v-if="showAddProject">
+    <input type="text" v-model="newProject.name" placeholder="Project name">
+    <a href="#" @click="addProject" class="btn primary with-icon">
+      Add project
+    </a>
+  </div>
+
+  <div>
+    <ul>
+      <li v-for="project in projects">{{ project.project_name }}</li>
+    </ul>
+  </div>
+</div>

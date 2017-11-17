@@ -1,12 +1,10 @@
 import comp from '../comp.js'
-import Navbar from '../components/Navbar.js'
-import Sidenav from '../components/Sidenav.js'
 import Card from '../components/Card.js'
 
 export default comp({
   templateURL: '/client/view/backlog.html',
 
-  components: {Navbar, Sidenav, Card},
+  components: {Card},
 
   data: () => {
     return {
@@ -43,14 +41,14 @@ export default comp({
   },
 
   created () {
-    this.$fetch.json('/api/installed')
-      .then(installed => {
-        this.installed = installed
-        if (!installed) {
-          this.$router.push('/setup')
-        }
-      })
-    this.$fetch.json('/api/project/list')
-      .then(projects => this.projects = projects)
+    // this.$fetch.json('/api/installed')
+    //   .then(installed => {
+    //     this.installed = installed
+    //     if (!installed) {
+    //       this.$router.push('/setup')
+    //     }
+    //   })
+    // this.$fetch.json('/api/project/list')
+    //   .then(projects => this.projects = projects)
   }
 })
