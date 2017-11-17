@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-10.8%" y="-1.2%" width="121.7%" height="102.9%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.78964821   0 0 0 0 0.819767244   0 0 0 0 0.872475553  0 0 0 1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <path d="M71.25,87 L48.75,87 C48.35,87 48,87.375 48,87.8035714 L48,90.4821429 C48,90.9107143 48.35,91.2857143 48.75,91.2857143 L71.25,91.2857143 C71.65,91.2857143 72,90.9107143 72,90.4821429 L72,87.8035714 C71.95,87.375 71.65,87 71.25,87 Z M48.85,93.4285714 C48.45,93.4285714 48.1,93.8035714 48.1,94.2321429 L48.1,110.196429 C48.1,110.625 48.45,111 48.85,111 L52.35,111 C52.75,111 53.1,110.625 53.1,110.196429 L53.1,94.2321429 C53.1,93.8035714 52.75,93.4285714 52.35,93.4285714 L48.85,93.4285714 Z M67.75,93.4285714 C67.35,93.4285714 67,93.8035714 67,94.2321429 L67,110.196429 C67,110.625 67.35,111 67.75,111 L71.25,111 C71.65,111 72,110.625 72,110.196429 L72,94.2321429 C72,93.8035714 71.65,93.4285714 71.25,93.4285714 L67.75,93.4285714 Z M55.85,93.4285714 C55.45,93.4285714 55.1,93.8035714 55.1,94.2321429 L55.1,110.196429 C55.1,110.625 55.45,111 55.85,111 L64.25,111 C64.65,111 65,110.625 65,110.196429 L65,94.2321429 C65,93.8035714 64.65,93.4285714 64.25,93.4285714 L55.85,93.4285714 Z" id="path-2"></path>
+    </defs>
+    <g id="Board-view" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="#2-Board_view_task_dragging" transform="translate(-40.000000, -81.000000)">
+            <g id="Side-menu" filter="url(#filter-1)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="Mask" fill="#54698D" xlink:href="#path-2"></use>
+            </g>
+        </g>
+    </g>
+</svg>
