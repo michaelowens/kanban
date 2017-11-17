@@ -1,68 +1,26 @@
-<div>
-  <navbar></navbar>
-  <sidenav></sidenav>
+<div class="canvas">
+  <div class="board_top_row">
+    <div><h1>Backlog</h1></div>
+    <div>
+        <a href="#" class="btn secondary with-icon">
+          <img src="assets/icons/plus.svg">
+          Add task
+        </a>
+    </div>
+  </div>
 
-        <!-- Board -->
-        <div class="canvas">
-          <div class="board_top_row">
-            <div><h1>Backlog</h1></div>
-            <div>
-                <a href="#" class="btn secondary with-icon">
-                  <img src="assets/icons/plus.svg">
-                  Add task
-                </a>
-            </div>
-          </div>
-
-          <div class="board">            
-            <div class="col" v-for="(list, listName) in lists">
-              <vddl-list :list="list" :horizontal="false">
-                <vddl-draggable class="card-wrapper" v-for="(item, index) in list" :key="item.id"
-                  :draggable="item"
-                  :index="index"
-                  :wrapper="list"
-                  effect-allowed="move">
-                  <card :data="item"></card>
-                </vddl-draggable>
-                <vddl-placeholder class="card" style="opacity: 0.2">drop here</vddl-placeholder>
-              </vddl-list>
-            </div>
-          </div>
-        </div>
-        
-        <div class="overlay"></div>
-        <aside class="open">
-          <form action="" method="post">
-            <router-link to=""><img src="assets/icons/plus.svg" class="close"></router-link>
-            <h1>Create Task</h1>
-            
-            <div class="input-row">
-              <label for="taskname">Task name</label>
-              <input type="text" name="taskname" id="taskname" placeholder="Versio alpha 0.2"> 
-            </div>
-
-            <div class="input-row">
-              <label for="duedate">Due date</label>
-              <input type="text" name="duedate" id="duedate" placeholder="Ex; 12-12-2017"> 
-            </div>
-
-            <div class="input-row">
-              <label for="assignto">Assign to</label>
-              <select name="assignto" id="assignto">
-                <option value="Djilano">Djilano</option>
-                <option value="Michael">Michael</option>
-              </select>
-              <!-- <input type="text" name="assignto" id="assignto" placeholder="Select...">  -->
-            </div>
-
-            <div class="input-row">
-              <label for="description">Description</label>
-              <textarea name="description" id="description" placeholder="Lorem ipsum dolor sit amet"></textarea>
-            </div>
-
-            <div class="input-row">
-              <button type="submit" class="btn primary">Create task</button>
-            </div>
-          </form>
-        </aside>
+  <div class="board">
+    <div class="col" v-for="(list, listName) in lists">
+      <vddl-list :list="list" :horizontal="false">
+        <vddl-draggable class="card-wrapper" v-for="(item, index) in list" :key="item.id"
+          :draggable="item"
+          :index="index"
+          :wrapper="list"
+          effect-allowed="move">
+          <card :data="item"></card>
+        </vddl-draggable>
+        <vddl-placeholder class="card" style="opacity: 0.2">drop here</vddl-placeholder>
+      </vddl-list>
+    </div>
+  </div>
 </div>

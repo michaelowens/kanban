@@ -1,5 +1,48 @@
-<div class="setup slds-grid slds-grid_align-center slds-grid_vertical-align-center">
+<div>
+  <navbar></navbar>
+  <sidenav></sidenav>
+
+  <router-view></router-view>
+
+  <div class="overlay"></div>
+  <aside class="open">
+    <form action="" method="post">
+      <router-link to=""><img src="assets/icons/plus.svg" class="close"></router-link>
+      <h1>Create Task</h1>
+      
+      <div class="input-row">
+        <label for="taskname">Task name</label>
+        <input type="text" name="taskname" id="taskname" placeholder="Versio alpha 0.2"> 
+      </div>
+
+      <div class="input-row">
+        <label for="duedate">Due date</label>
+        <input type="text" name="duedate" id="duedate" placeholder="Ex; 12-12-2017"> 
+      </div>
+
+      <div class="input-row">
+        <label for="assignto">Assign to</label>
+        <select name="assignto" id="assignto">
+          <option value="Djilano">Djilano</option>
+          <option value="Michael">Michael</option>
+        </select>
+        <!-- <input type="text" name="assignto" id="assignto" placeholder="Select...">  -->
+      </div>
+
+      <div class="input-row">
+        <label for="description">Description</label>
+        <textarea name="description" id="description" placeholder="Lorem ipsum dolor sit amet"></textarea>
+      </div>
+
+      <div class="input-row">
+        <button type="submit" class="btn primary">Create task</button>
+      </div>
+    </form>
+  </aside>
+</div>
+
+<!-- <div class="setup slds-grid slds-grid_align-center slds-grid_vertical-align-center">
   <div class="slds-container_large">
     Loading...
   </div>
-</div>
+</div> -->

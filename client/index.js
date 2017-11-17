@@ -1,3 +1,4 @@
+import App from './App.js'
 import routes from './Routes.js'
 import VueFetch from './VueFetch.js'
 
@@ -9,6 +10,17 @@ const router = new VueRouter({
   mode: 'history'
 })
 
+router.beforeEach((to, from, next) => {
+  router.app.$fetch.json('/api/installed')
+    .then(installed => {
+      if (!installed && to.path.indexOf('/setup') < 0) {
+        return next('/setup')
+      }
+
+      next()
+    })
+})
+
 // new Vue({
 //   components: {App},
 //   el: '#app',
@@ -16,5 +28,8 @@ const router = new VueRouter({
 // })
 
 const app = new Vue({
-  router
+  router,
+  components: {App},
+  el: '#app',
+  template: '<App />'
 }).$mount('#app')
