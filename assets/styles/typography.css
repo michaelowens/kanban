@@ -1,0 +1,26 @@
+/*==================================
+=            Typography            =
+==================================*/
+@font-face {
+    font-family: salesforce-regular;
+    src: url(../lightning/fonts/webfonts/SalesforceSans-Regular.woff),
+    	 url(../lightning/fonts/webfonts/SalesforceSans-Regular.woff2);
+}
+
+@font-face {
+    font-family: salesforce-bold;
+    src: url(../lightning/fonts/webfonts/SalesforceSans-Bold.woff),
+    	 url(../lightning/fonts/webfonts/SalesforceSans-Bold.woff2);
+}
+
+@font-face {
+    font-family: salesforce-light;
+    src: url(../lightning/fonts/webfonts/SalesforceSans-Light.woff),
+    	 url(../lightning/fonts/webfonts/SalesforceSans-Light.woff2);
+}
+
+p {
+	font: 12px var(--font-family);
+	color: var(--black);
+	line-height: 1.5;
+}

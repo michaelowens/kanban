@@ -1,8 +1,39 @@
+/*===============================
+=            Imports            =
+===============================*/
+@import url("normalize.css");
+@import url("canvas.css");
+@import url("cards.css");
+@import url("inputs.css");
+@import url("buttons.css");
+@import url("tooltips.css");
+@import url("typography.css");
+
+/* Variables */
+:root {
+	--font-family: 'salesforce-regular';
+	--font-family-bold: 'salesforce-bold';
+	--font-family-light: 'salesforce-light';
+	--white: #ffffff;
+	--black: #16325C;
+	--border: #D8DDE6;
+	--green: #4BC076;
+}
+
+* {
+	box-sizing: border-box;
+}
+
 html {
   height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 body {
   min-height: 100%;
+  height: 100%;
+  background: #FCFCFC;
+  font: 14px var(--font-family);
 }
 
 #app {
@@ -14,39 +45,4 @@ body {
 }
 
 
-.setup .setup-container {
-  /*height: 500px;*/
-}
 
-.setup .setup-card-body {
-  height: 50vh;
-  /*width: 100vh;*/
-}
-
-.slds-nav-vertical__action > span {
-
-  display: block;
-  text-align: center;
-  padding: 20px;
-}
-
-.board {
-  margin-top: 20px;
-}
-
-.slds-col {
-  width: 100%;
-}
-
-.vddl-list {
-  min-height: 100px;
-  width: 100%;
-}
-
-.card-wrapper:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-.slds-card .slds-col h2 {
-	line-height: 2.6;
-}

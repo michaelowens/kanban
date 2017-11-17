@@ -33,10 +33,10 @@ export default comp({
           //...
         ],
         "C": [
-          //...
-        ],
-        "D": [
-          //...
+          {
+            "id": 4,
+            "label": "Djilano swekkin"
+          },
         ]
       }
     }
