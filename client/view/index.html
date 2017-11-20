@@ -1,6 +1,6 @@
 <div>
-  <navbar></navbar>
-  <sidenav></sidenav>
+  <navbar v-if="$route.name != 'setup'"></navbar>
+  <sidenav v-if="$route.name != 'setup'"></sidenav>
 
   <router-view></router-view>
 
@@ -26,7 +26,6 @@
           <option value="Djilano">Djilano</option>
           <option value="Michael">Michael</option>
         </select>
-        <!-- <input type="text" name="assignto" id="assignto" placeholder="Select...">  -->
       </div>
 
       <div class="input-row">

@@ -25,8 +25,30 @@ h1 {
     margin: 0;
 }
 
+h2 {
+    font: 24px var(--font-family);
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    font: 20px var(--font-family-light);
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+}
+
 p {
 	font: 12px var(--font-family);
 	color: var(--black);
 	line-height: 1.5;
+}
+
+p.subtle {
+    color: var(--black-subtle);
+}
+
+label {
+    color: var(--black);
 }

@@ -4,6 +4,7 @@
 @import url("normalize.css");
 @import url("canvas.css");
 @import url("cards.css");
+@import url("installer.css");
 @import url("inputs.css");
 @import url("buttons.css");
 @import url("tooltips.css");
@@ -19,6 +20,8 @@
 	--black-subtle: #8996AD;
 	--border: #D8DDE6;
 	--border-vivid: #A8B7C7;
+	--box-shadow: #F0F2F7;
+	--installer-footer: #F7F9FB;
 	--green: #4BC076;
 	--btn-primary: #70B3F8;
 	--btn-primary-hover: #2B8EE5;

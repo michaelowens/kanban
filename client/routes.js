@@ -5,8 +5,8 @@ import Backlog from './pages/backlog.js'
 import Projects from './pages/projects.js'
 
 export default [
-  { path: '/', component: Index },
-  { path: '/setup', component: Setup },
-  { path: '/backlog', component: Backlog },
-  { path: '/projects', component: Projects },
+  { path: '/', name: 'index', component: Index },
+  { path: '/setup', name: 'setup', component: Setup },
+  { path: '/backlog', name: 'backlog', component: Backlog },
+  { path: '/projects', name: 'projects', component: Projects },
 ]
