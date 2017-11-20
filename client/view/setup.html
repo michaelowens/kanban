@@ -3,30 +3,67 @@
     <h3>Installation Process</h3>
   </div>
   <div class="installer_container">
-    <h2>What is your company called?</h2>
-    <p class="subtle">Before you can start using this application, we <br> need to gather some information about you.</p>
+    <template v-if="activeStep == 1">
+      <h2>What is your company called?</h2>
+      <p class="subtle">Before you can start using this application, we <br> need to gather some information about you.</p>
+    </template>
+    <template v-if="activeStep == 2">
+      <h2>What is your name?</h2>
+      <p class="subtle">We would like to know a little bit more about you.</p>
+    </template>
+    <template v-if="activeStep == 3">
+      <h2>Last piece of the puzzle</h2>
+      <p class="subtle">You are almost done!</p>
+    </template>
+    <template v-if="activeStep == 4">
+      <h2>All done!</h2>
+      <p class="subtle">You are FINISHED!</p>
+    </template>
 
-    <form action="#" method="post">
+    <form action="#" method="post" v-if="activeStep < 4">
       <div class="input-row" v-if="error">
         <span>Something went wrong setting up the database. Do you have write permissions in root folder?</span>
       </div>
 
-      <div class="input-row">
-        <label for="companyname">Company name</label>
-        <input type="text" name="companyname" id="companyname" placeholder="Acme inc."> 
-      </div>
+      <template v-if="activeStep == 1">
+        <div class="input-row">
+          <label for="settings.companyName">Company name</label>
+          <input type="text" name="settings.companyName" v-model="settings.companyName" placeholder="Acme inc."> 
+        </div>
+      </template>
 
-      <div class="input-row">
-        <label for="companyname">Company name</label>
-        <input type="text" name="companyname" id="companyname" placeholder="Acme inc."> 
-      </div>
+      <template v-if="activeStep == 2">
+        <div class="input-row">
+          <label for="settings.firstName">First name</label>
+          <input type="text" name="settings.firstName" v-model="settings.firstName" placeholder="John"> 
+        </div>
+        <div class="input-row">
+          <label for="settings.lastName">Last name</label>
+          <input type="text" name="settings.lastName" v-model="settings.lastName" placeholder="Doe"> 
+        </div>
+      </template>
+
+      <template v-if="activeStep == 3">
+        <div class="input-row">
+          <label for="settings.email">Email</label>
+          <input type="text" name="settings.email" v-model="settings.email" placeholder="example@acmeinc.com"> 
+        </div>
+        <div class="input-row">
+          <label for="settings.password">Password</label>
+          <input type="password" name="settings.password" v-model="settings.password" placeholder="**********"> 
+        </div>
+        <div class="input-row">
+          <label for="settings.passwordRepeat">Password (repeat)</label>
+          <input type="password" name="settings.passwordRepeat" v-model="settings.passwordRepeat" placeholder="**********"> 
+        </div>
+      </template>
     </form>
   </div>
   <div class="installer_footer">
     <div class="column_wrapper">
-      <div><a href="#" class="btn secondary">Back</a></div>
-      <div><progress-indicator :steps="3" :active-step="1" @step-clicked="onStepClicked"></progress-indicator></div>
-      <div><a href="#" class="btn primary" @click="install">Next</a></div>
+      <div><a href="#" class="btn secondary" @click="back" v-if="activeStep > 1">Back</a></div>
+      <div><progress-indicator :steps="steps" :active-step="activeStep" @step-clicked="onStepClicked"></progress-indicator></div>
+      <div><a href="#" class="btn primary" @click="next" v-if="activeStep <= steps">Next</a></div>
     </div>
   </div>
 </div>
