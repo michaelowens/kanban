@@ -55,10 +55,10 @@ select {
 .input-row {
     width: 100%;
     display: block;
-    margin-bottom: 16px;
+    /*margin-bottom: 16px;*/
 }
 
-.input-row:last-of-type {
-    margin-top: 32px;
+.input-row:not(:first-of-type) {
+    margin-top: 16px;
     margin-bottom: 0;
-}   
+}

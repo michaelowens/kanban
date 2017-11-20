@@ -11,11 +11,34 @@ export default comp({
   data: () => {
     return {
       installed: null,
-      error: false
+      error: false,
+
+      settings: {
+        companyName: '',
+        firstName: '',
+        lastName: '',
+        password: '',
+        passwordRepeat: ''
+      },
+
+      steps: 3,
+      activeStep: 1
     }
   },
 
   methods: {
+    back () {
+      if (this.activeStep > 1) {
+        this.activeStep -= 1
+      }
+    },
+
+    next () {
+      if (this.activeStep <= this.steps) {
+        this.activeStep += 1
+      }
+    },
+
     install () {
       this.$fetch.json('/api/setup_db').then(response => {
         if (response) {
