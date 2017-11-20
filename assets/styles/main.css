@@ -13,24 +13,24 @@
 
 /* Variables */
 :root {
-	--font-family: 'salesforce-regular';
-	--font-family-bold: 'salesforce-bold';
-	--font-family-light: 'salesforce-light';
-	--white: #ffffff;
-	--black: #16325C;
-	--black-subtle: #8996AD;
-	--border: #D8DDE6;
-	--border-vivid: #A8B7C7;
-	--box-shadow: #F0F2F7;
-	--installer-footer: #F7F9FB;
-	--progress-bullet: #CFD7E6;
-	--green: #4BC076;
-	--primary: #70B3F8;
-	--primary-hover: #2B8EE5;
+  --font-family: 'salesforce-regular';
+  --font-family-bold: 'salesforce-bold';
+  --font-family-light: 'salesforce-light';
+  --white: #ffffff;
+  --black: #16325C;
+  --black-subtle: #8996AD;
+  --border: #D8DDE6;
+  --border-vivid: #A8B7C7;
+  --box-shadow: #F0F2F7;
+  --installer-footer: #F7F9FB;
+  --progress-bullet: #CFD7E6;
+  --green: #4BC076;
+  --primary: #70B3F8;
+  --primary-hover: #2B8EE5;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -54,6 +54,6 @@ body {
 }
 
 .vddl-list {
-	min-height: 110px;
-	width: 100%;
+  min-height: 110px;
+  width: 100%;
 }

@@ -2,157 +2,157 @@
 =    Header (top nav bar)       =
 ===============================*/
 header {
-	background: linear-gradient(to right, #9EA7FC , #65B6F7);
-	width: 100%;
-	height: 60px;
-	position: relative;
-	z-index: 20;
-	display: grid;	
-	grid-template-columns: 120px auto;
+  background: linear-gradient(to right, #9EA7FC , #65B6F7);
+  width: 100%;
+  height: 60px;
+  position: relative;
+  z-index: 20;
+  display: grid;  
+  grid-template-columns: 120px auto;
 }
 
 header .company_name {
-	background: rgba(50, 50, 93, .2);
-	width: 120px;
-	height: 60px;
-	padding: 10px 20px;
-	text-align: center;
-	display: block;
+  background: rgba(50, 50, 93, .2);
+  width: 120px;
+  height: 60px;
+  padding: 10px 20px;
+  text-align: center;
+  display: block;
 }
 
 header .company_name span {
-	font-family: var(--font-family-bold);
-	font-size: 20px;
-	color: var(--white);
-	line-height: 1;
-	vertical-align: middle;
+  font-family: var(--font-family-bold);
+  font-size: 20px;
+  color: var(--white);
+  line-height: 1;
+  vertical-align: middle;
 }
 
 header .inner_container {
-	padding: 10px 0;
-	display: grid;
-	grid-template-columns: auto 160px 60px 210px;
-	text-align: center;
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: auto 160px 60px 210px;
+  text-align: center;
 }
 
 header .inner_container .searchbar {
-	text-align: left;
-	color: var(--white);
-	line-height: 2.5;
-	padding-left: 40px;
+  text-align: left;
+  color: var(--white);
+  line-height: 2.5;
+  padding-left: 40px;
 }
 
 header .inner_container .searchbar img {
-	float: left;
-	margin: 10px 10px 0 0;
+  float: left;
+  margin: 10px 10px 0 0;
 }
 
 header .inner_container div > .btn { /* pushes down the create project btn */
-	margin: 4px auto;
+  margin: 4px auto;
 }
 
 header .inner_container .home {
-	position: relative;
+  position: relative;
 }
 
 header .inner_container .home a img { /* pushes down the home btn */
-	margin-top: 10px;
+  margin-top: 10px;
 }
 
 header .inner_container .home:before {
-	content: " ";
-	display: block;
-	background-color: rgba(255, 255, 255, .25);
-	height: 60px;
-	width: 1px;
-	position: absolute;
-	top: -10px;
-	left: 0;
+  content: " ";
+  display: block;
+  background-color: rgba(255, 255, 255, .25);
+  height: 60px;
+  width: 1px;
+  position: absolute;
+  top: -10px;
+  left: 0;
 }
 
 header .inner_container .home:after {
-	content: " ";
-	display: block;
-	background-color: rgba(255, 255, 255, .25);
-	height: 60px;
-	width: 1px;
-	position: absolute;
-	top: -10px;
-	right: 0;
+  content: " ";
+  display: block;
+  background-color: rgba(255, 255, 255, .25);
+  height: 60px;
+  width: 1px;
+  position: absolute;
+  top: -10px;
+  right: 0;
 }
 
 header .inner_container .user {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 header .inner_container .user span {
-	line-height: 2.8;
-	color: var(--white);
+  line-height: 2.8;
+  color: var(--white);
 }
 
 header .inner_container .user img {
-	margin: 0 auto;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 /*================================
 =            Side nav            =
 ================================*/
 nav {
-	background: var(--white);
-	width: 120px;
-	height: calc(100vh - 60px);
-	position: absolute;
-	left: 0;
-	top: 60px;
-	box-shadow: 0 2px 8px #C9D1DE;
+  background: var(--white);
+  width: 120px;
+  height: calc(100vh - 60px);
+  position: absolute;
+  left: 0;
+  top: 60px;
+  box-shadow: 0 2px 8px #C9D1DE;
 }
 
 nav ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
-	display: block;
-	margin: 0;
+  display: block;
+  margin: 0;
 }
 
 nav ul li a {
-	width: 100%;
-	height: 100px;
-	display: block;
-	position: relative;
-	font: 14px var(--font-family);
-	text-align: center;
-	text-decoration: none;
-	color: var(--black);
-	transition: background .2s;
+  width: 100%;
+  height: 100px;
+  display: block;
+  position: relative;
+  font: 14px var(--font-family);
+  text-align: center;
+  text-decoration: none;
+  color: var(--black);
+  transition: background .2s;
 }
 
 nav ul li a.active:before {
-	content: " ";
-	display: block;
-	background: linear-gradient(to bottom, #9EA7FC , #65B6F7);
-	width: 3px;
-	height: 100px;
-	position: absolute;
-	left: 0;
+  content: " ";
+  display: block;
+  background: linear-gradient(to bottom, #9EA7FC , #65B6F7);
+  width: 3px;
+  height: 100px;
+  position: absolute;
+  left: 0;
 }
 
 nav ul li a:hover {
-	background: rgba(0, 0, 0, .05);
-	transition: background .2s;
+  background: rgba(0, 0, 0, .05);
+  transition: background .2s;
 }
 
 nav ul li a img {
-	display: block;
-	margin: 0 auto;
-	padding-top: 19px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 19px;
 }
 
 
@@ -160,82 +160,87 @@ nav ul li a img {
 =            Board            =
 =============================*/
 .canvas {
-	width: calc(100vw - 200px);
-	height: calc(100vh - 100px);
-	position: relative;
-	left: 160px;
-	top: 40px;
-	right: 40px;
-	z-index: 10;
+  width: calc(100vw - 200px);
+  height: calc(100vh - 100px);
+  position: relative;
+  left: 160px;
+  top: 40px;
+  right: 40px;
+  z-index: 10;
 }
 
 .board_top_row {
-	display: grid;
-	grid-template-columns: minmax(100px, 200px) auto;
-	margin-bottom: 40px;
+  display: grid;
+  grid-template-areas: "a a";
+  grid-auto-columns: minmax(150px, max-content) auto;
+  margin-bottom: 40px;
+}
+
+.board_top_row h1 {
+  margin-right: 20px;
 }
 
 .board_top_row .btn {
-	margin-top: 2px;
+  margin-top: 2px;
 }
 
 .board {
-	/*background: #ff69b461;*/
-	width: 100%;
-	height: calc(100% - 76px);  /*prevent the board from overflowing */
-	display: grid;
-	margin-top: 40px;
-	grid-template-columns: repeat(3, 1fr);
-	grid-column-gap: 45px;
+  /*background: #ff69b461;*/
+  width: 100%;
+  height: calc(100% - 76px);  /*prevent the board from overflowing */
+  display: grid;
+  margin-top: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 45px;
 }
 
 .board .col {
-	width: 320px;	
-	height: 100%;
-	/*background: dodgerblue;*/
+  width: 320px; 
+  height: 100%;
+  /*background: dodgerblue;*/
 }
 
 /*=======================================
 =          Add/Edit/Options menu        =
 =======================================*/
 .overlay {
-	background: rgba(0,0,0, .4);
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	left: 0;
-	top: 0;
-	z-index: 15;
+  background: rgba(0,0,0, .4);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 15;
 }
 
 aside {
-	background: var(--white);
-	width: 410px;
-	height: calc(100% - 60px);
-	position: absolute;
-	right: 0;
-	top: 60px;
-	padding: 40px;
-	z-index: 20;
-	box-shadow: 0 2px 8px #C9D1DE;
-	transform: translateX(410px);
-	transition: transform .25s;
+  background: var(--white);
+  width: 410px;
+  height: calc(100% - 60px);
+  position: absolute;
+  right: 0;
+  top: 60px;
+  padding: 40px;
+  z-index: 20;
+  box-shadow: 0 2px 8px #C9D1DE;
+  transform: translateX(410px);
+  transition: transform .25s;
 }
 
 aside.open {
-	transform: translateX(0);
-	transition: transform .25s;
+  transform: translateX(0);
+  transition: transform .25s;
 }
 
 aside .close {
-	position: absolute;
-	top: 15px;
-	right: 15px;
-	cursor: pointer;
-	transform: rotate(45deg);
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  transform: rotate(45deg);
 }
 
 aside h1 {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
