@@ -65,9 +65,17 @@ select {
 .input-row.error input[type="text"],
 .input-row.error input[type="email"],
 .input-row.error input[type="password"],
-textarea,
-select {
+textarea.error,
+select.error {
     border-color: var(--error);
+}
+
+.input-row.error input[type="text"]:focus,
+.input-row.error input[type="email"]:focus,
+.input-row.error input[type="password"]:focus,
+textarea.error,
+select.error {
+    box-shadow: 0 0 3px var(--error);
 }
 
 .input-row.error label {

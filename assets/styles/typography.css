@@ -52,3 +52,7 @@ p.subtle {
 label {
     color: var(--black);
 }
+
+span.error {
+    color: var(--error);
+}
