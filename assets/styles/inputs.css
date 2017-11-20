@@ -55,10 +55,21 @@ select {
 .input-row {
     width: 100%;
     display: block;
-    /*margin-bottom: 16px;*/
 }
 
 .input-row:not(:first-of-type) {
     margin-top: 16px;
     margin-bottom: 0;
+}
+
+.input-row.error input[type="text"],
+.input-row.error input[type="email"],
+.input-row.error input[type="password"],
+textarea,
+select {
+    border-color: var(--error);
+}
+
+.input-row.error label {
+    color: var(--error);
 }
