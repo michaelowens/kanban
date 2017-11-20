@@ -26,33 +26,33 @@
       </div>
 
       <template v-if="activeStep == 1">
-        <div class="input-row">
+        <div class="input-row" :class="{error: errorFields.includes('companyName')}">
           <label for="settings.companyName">Company name</label>
           <input type="text" name="settings.companyName" v-model="settings.companyName" placeholder="Acme inc."> 
         </div>
       </template>
 
       <template v-if="activeStep == 2">
-        <div class="input-row">
+        <div class="input-row" :class="{error: errorFields.includes('firstName')}">
           <label for="settings.firstName">First name</label>
           <input type="text" name="settings.firstName" v-model="settings.firstName" placeholder="John"> 
         </div>
-        <div class="input-row">
+        <div class="input-row" :class="{error: errorFields.includes('lastName')}">
           <label for="settings.lastName">Last name</label>
           <input type="text" name="settings.lastName" v-model="settings.lastName" placeholder="Doe"> 
         </div>
       </template>
 
       <template v-if="activeStep == 3">
-        <div class="input-row">
+        <div class="input-row" :class="{error: errorFields.includes('email')}">
           <label for="settings.email">Email</label>
           <input type="text" name="settings.email" v-model="settings.email" placeholder="example@acmeinc.com"> 
         </div>
-        <div class="input-row">
+        <div class="input-row" :class="{error: errorFields.includes('password')}">
           <label for="settings.password">Password</label>
           <input type="password" name="settings.password" v-model="settings.password" placeholder="**********"> 
         </div>
-        <div class="input-row">
+        <div class="input-row" :class="{error: errorFields.includes('passwordRepeat')}">
           <label for="settings.passwordRepeat">Password (repeat)</label>
           <input type="password" name="settings.passwordRepeat" v-model="settings.passwordRepeat" placeholder="**********"> 
         </div>
