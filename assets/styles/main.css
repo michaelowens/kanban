@@ -8,6 +8,7 @@
 @import url("inputs.css");
 @import url("buttons.css");
 @import url("tooltips.css");
+@import url("progress-indicator.css");
 @import url("typography.css");
 
 /* Variables */
@@ -22,9 +23,10 @@
 	--border-vivid: #A8B7C7;
 	--box-shadow: #F0F2F7;
 	--installer-footer: #F7F9FB;
+	--progress-bullet: #CFD7E6;
 	--green: #4BC076;
-	--btn-primary: #70B3F8;
-	--btn-primary-hover: #2B8EE5;
+	--primary: #70B3F8;
+	--primary-hover: #2B8EE5;
 }
 
 * {

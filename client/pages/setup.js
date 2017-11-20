@@ -1,9 +1,12 @@
 import comp from '../comp.js'
+import ProgressIndicator from '../components/ProgressIndicator.js'
 
 export default comp({
   templateURL: '/client/view/setup.html',
 
-  components: {},
+  components: {
+    ProgressIndicator,
+  },
 
   data: () => {
     return {
@@ -21,6 +24,9 @@ export default comp({
           this.error = true
         }
       })
+    },
+    onStepClicked (stepNumber) {
+      console.log('I want to go to:', stepNumber)      
     }
   },
 

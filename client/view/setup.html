@@ -15,12 +15,17 @@
         <label for="companyname">Company name</label>
         <input type="text" name="companyname" id="companyname" placeholder="Acme inc."> 
       </div>
+
+      <div class="input-row">
+        <label for="companyname">Company name</label>
+        <input type="text" name="companyname" id="companyname" placeholder="Acme inc."> 
+      </div>
     </form>
   </div>
   <div class="installer_footer">
     <div class="column_wrapper">
       <div><router-link to="#" class="btn secondary">Back</router-link></div>
-      <div style="text-align: center;">PROGRESS INDICATION</div>
+      <div><progress-indicator :steps="3" :active-step="1" @step-clicked="onStepClicked"></progress-indicator></div>
       <div><router-link to="#" class="btn primary" @click="install">Next</router-link></div>
     </div>
   </div>

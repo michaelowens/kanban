@@ -1,0 +1,5 @@
+<ol class="progress-indicator">
+  <li v-for="n in steps">
+    <a href="#" :class="{active: n == activeStep, completed: n < activeStep}" @click="onClick($event, n)">&nbsp;</a>
+  </li>
+</ol>

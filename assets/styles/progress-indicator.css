@@ -1,0 +1,56 @@
+/*==========================================
+=            Progress Indicator            =
+==========================================*/
+
+ol.progress-indicator {
+	background: var(--progress-bullet);	
+	width: 100px;
+	height: 2px;
+	margin: 0 auto;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+	list-style: none;
+}
+
+ol.progress-indicator li {
+	width: 16px;
+	background: var(--installer-footer);
+	display: inline-block;
+	align-items: center;
+}
+
+ol.progress-indicator li:last-child {
+	margin-right: 0;
+}
+
+ol.progress-indicator li a {
+	background: var(--progress-bullet);
+	width: 8px;
+	height: 8px;
+	display: block;
+	margin: 0 auto;
+	cursor: default;
+	border-radius: 50%;
+	text-decoration: none;
+	color: var(--progress-bullet);
+}
+
+ol.progress-indicator li a.active {
+	width: 12px;
+	height: 12px;
+	background: var(--white);
+	border: 3px solid var(--primary);
+}
+
+ol.progress-indicator li a.completed {
+	background: var(--primary) url('../../assets/icons/completed-step.svg');
+	background-repeat: no-repeat;
+	background-position-x: 2px;
+	background-position-y: 3px;
+	width: 12px;
+	height: 12px;
+	cursor: pointer;
+}

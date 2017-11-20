@@ -24,13 +24,13 @@
 }
 
 .primary {
-	background: var(--btn-primary);
-	border-color: var(--btn-primary);
+	background: var(--primary);
+	border-color: var(--primary);
 }
 
 .primary:hover {
-	background: var(--btn-primary-hover);
-	border-color: var(--btn-primary-hover);
+	background: var(--primary-hover);
+	border-color: var(--primary-hover);
 	transition: background .2s, border-color .2s;
 }
 
