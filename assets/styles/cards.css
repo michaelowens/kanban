@@ -28,6 +28,41 @@
 	transform: translateY(-50%);
 }
 
+.card img.avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.card span {
+	font-size: 16px;
+	color: var(--black);
+}
+
+.card .header_card {
+	display: grid;
+	grid-template-columns: 24px auto 20px;
+	grid-column-gap: 10px;
+}
+
+.card .header_card .options {
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 6px 3px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.card .header_card .options img {
+    display: inline-block;
+    vertical-align: top;
+}
+
 .card.dragging {
 	background: repeating-linear-gradient(
 	  45deg,

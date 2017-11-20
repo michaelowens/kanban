@@ -190,14 +190,35 @@ nav ul li a img {
   height: calc(100% - 76px);  /*prevent the board from overflowing */
   display: grid;
   margin-top: 40px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);  
+  grid-template-rows: max-content;
   grid-column-gap: 45px;
 }
 
 .board .col {
   /*width: 320px; */
   height: 100%;
+  position: relative;
   /*background: dodgerblue;*/
+}
+
+.board .col::after {
+  content: " ";
+  display: block;
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -22px;
+  background-image: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 5px,
+      var(--border) 5px,
+      var(--border) 10px);
+}
+
+.board .col:last-of-type::after {
+  display: none;
 }
 
 /*=======================================

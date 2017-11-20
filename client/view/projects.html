@@ -1,11 +1,13 @@
 <div class="canvas">
-  <h1>
-    Projects
-    <a href="#" @click="openAddProject" class="btn secondary with-icon">
-      <img src="assets/icons/plus.svg">
-      New project
-    </a>
-  </h1>
+  <div class="board_top_row">
+    <h1>Projects</h1>
+    <div>
+      <a href="#" @click="openAddProject" class="btn secondary with-icon">
+        <img src="assets/icons/plus.svg">
+        New project
+      </a>
+    </div>
+  </div>
   
   <div v-if="showAddProject">
     <input type="text" v-model="newProject.name" placeholder="Project name">
@@ -14,9 +16,37 @@
     </a>
   </div>
 
-  <div>
-    <ul>
-      <li v-for="project in projects">{{ project.project_name }}</li>
-    </ul>
+  <div class="board">
+    <div class="col" v-for="project in projects">      
+      <div class="project-card">
+        <div class="header_card">
+          <h2>{{ project.project_name }}</h2>
+          <div class="options"><img src="../../assets/icons/chevron-down.svg"></div>
+        </div>
+
+        <p class="subtle">Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores!</p>        
+
+        <div class="inner_card">
+          <div class="assignees">
+            <p>Assignees:</p>
+            <div>
+              <img src="https://secure.gravatar.com/avatar/ca7f4cddd0331a3956fed75f4ee8ba5d?r=g&d=https://avatar-cdn.atlassian.com/default/40&s=40" alt="">
+              <img src="https://secure.gravatar.com/avatar/ca7f4cddd0331a3956fed75f4ee8ba5d?r=g&d=https://avatar-cdn.atlassian.com/default/40&s=40" alt="">
+              <img src="https://secure.gravatar.com/avatar/ca7f4cddd0331a3956fed75f4ee8ba5d?r=g&d=https://avatar-cdn.atlassian.com/default/40&s=40" alt="">
+            </div>
+          </div>
+
+          <div class="milestones">
+            <p>Milestones:</p>
+            <span>3</span>
+          </div>
+
+          <div class="hours">
+            <p>Total estimated hours:</p>
+            <span>28h</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

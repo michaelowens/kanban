@@ -1,0 +1,61 @@
+/*=============================
+=         project cards       =
+=============================*/
+.project-card {
+    background: var(--white);
+    width: 100%;
+    min-height: 200px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    display: block;
+    padding: 10px 15px;
+    cursor: default;
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.project-card .header_card {
+    display: grid;
+    grid-template-columns: auto 20px;
+}
+
+.project-card .header_card .options {
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 6px 3px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.project-card .header_card .options img {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.project-card > p {
+    max-width: 85%;
+}
+
+.project-card .inner_card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+}
+
+.project-card .inner_card span {
+    color: var(--black-subtle);
+    font-size: 16px;
+}
+
+.project-card .inner_card .assignees img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.project-card .inner_card .assignees img:last-of-type {
+    margin-right: 0;
+}

@@ -4,6 +4,7 @@
 @import url("normalize.css");
 @import url("canvas.css");
 @import url("cards.css");
+@import url("cards-projects.css");
 @import url("installer.css");
 @import url("inputs.css");
 @import url("buttons.css");
@@ -54,6 +55,6 @@ body {
 }
 
 .vddl-list {
-  min-height: 110px;
+  min-height: calc(100vh - 200px);
   width: 100%;
 }
