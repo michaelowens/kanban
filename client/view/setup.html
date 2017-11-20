@@ -7,6 +7,10 @@
     <p class="subtle">Before you can start using this application, we <br> need to gather some information about you.</p>
 
     <form action="#" method="post">
+      <div class="input-row" v-if="error">
+        <span>Something went wrong setting up the database. Do you have write permissions in root folder?</span>
+      </div>
+
       <div class="input-row">
         <label for="companyname">Company name</label>
         <input type="text" name="companyname" id="companyname" placeholder="Acme inc."> 
@@ -17,23 +21,7 @@
     <div class="column_wrapper">
       <div><router-link to="#" class="btn secondary">Back</router-link></div>
       <div style="text-align: center;">PROGRESS INDICATION</div>
-      <div><router-link to="#" class="btn primary">Next</router-link></div>
+      <div><router-link to="#" class="btn primary" @click="install">Next</router-link></div>
     </div>
   </div>
 </div>
- 
-
-  <div class="setup-container slds-col slds-container_medium slds-text-align_center">
-    <article class="setup-card slds-card">
-      <div class="setup-card-body slds-card__body slds-card__body_inner">
-        <p>Please click the button to install.</p>
-        <button class="slds-button slds-button_brand" @click="install">Button</button>
-
-        <div v-if="error">Something went wrong setting up the database. Do you have write permissions in root folder?</div>
-      </div>
-      <footer class="slds-card__footer">Card Footer</footer>
-    </article>
-    <div class="slds-box slds-p-around_none">
-      <p>Test</p>
-    </div>
-  </div>
