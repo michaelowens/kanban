@@ -24,7 +24,7 @@ export default comp({
       },
 
       steps: 3,
-      activeStep: 1
+      activeStep: 4
     }
   },
 

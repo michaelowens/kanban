@@ -18,7 +18,12 @@
     <template v-if="activeStep == 4">
       <h2>Installation process complete!</h2>
       <p class="subtle">Ready for liftoff!</p>
-      <img src="assets/images/illustration_complete.svg">
+  
+      <div class="liftoff">
+        <img src="assets/images/illustration_complete.svg" class="rocket" style="display: block; margin: 30px auto 30px;">        
+      </div>
+      <img src="assets/images/illustration_complete_ground.svg" style="display: block; margin: 0 auto;">
+
     </template>
 
     <form action="#" method="post" v-if="activeStep < 4">
