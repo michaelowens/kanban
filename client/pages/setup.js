@@ -74,18 +74,23 @@ export default comp({
 
       if (this.errorFields.length < 1 && this.activeStep <= this.steps) {
         this.activeStep += 1
+
+        if (this.activeStep === this.steps + 1) {
+          this.install()
+        }
       }
     },
 
     install () {
       this.$fetch.json('/api/setup_db').then(response => {
         if (response) {
-          this.$router.push('/backlog')
+          //this.$router.push('/backlog')
         } else {
           this.error = true
         }
       })
     },
+
     onStepClicked (stepNumber) {
       console.log('I want to go to:', stepNumber)      
     }

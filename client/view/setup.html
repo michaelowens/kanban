@@ -70,6 +70,7 @@
       <div><a href="#" class="btn secondary" @click="back" v-if="activeStep > 1">Back</a></div>
       <div><progress-indicator :steps="steps" :active-step="activeStep" @step-clicked="onStepClicked"></progress-indicator></div>
       <div><a href="#" class="btn primary" @click="next" v-if="activeStep <= steps">Next</a></div>
+      <div><a href="#" class="btn primary" @click="$router.push('/')" v-if="activeStep > steps">Login</a></div>
     </div>
   </div>
 </div>
