@@ -14,27 +14,50 @@ $api->get('/', function () {
 /**
  * Core
  */
-$api->get('/setup_db', function () use ($app, $db) {
-  // $fp = file('schema.sql', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-  // $query = '';
-  // $success = true;
-  // foreach ($fp as $line) {
-  //     if ($line != '' && strpos($line, '--') === false) {
-  //         $query .= $line;
-  //         if (substr($query, -1) == ';') {
-  //           var_dump($query);
-  //             $s = $db->exec($query);
-  //             $query = '';
+$api->post('/setup', function (Request $request) use ($app, $db) {
+  $db->exec(file_get_contents('schema.sql'));
+  $success = $db->pdo->errorCode() === '00000';
 
-  //             if (!$s) {
-  //               var_dump($db->pdo->errorInfo());
-  //               $success = false;
-  //             }
-  //         }
-  //     }
-  // }
-  $success = $db->exec(file_get_contents('schema.sql'));
-  return $app->json($db->pdo->errorCode() === '00000');
+  if (!$success) {
+    return $app->json([
+      'success' => false,
+      'error' => 'RUN_SCHEMA_SQL'
+    ]);
+  }
+
+  $params = [];
+  foreach (['companyName', 'firstName', 'lastName', 'email', 'password'] as $param) {
+    $params[$param] = $request->get($param);
+
+    if (!$params[$param]) {
+      return $app->json([
+        'success' => false,
+        'error' => 'MISSING_PARAMETER'
+      ]);
+    }
+  }
+
+  $q = "INSERT INTO users (first_name, last_name, email, password, admin) VALUES (:first_name, :last_name, :email, :password, :admin)";
+
+  try {
+    $user = $db->insert($q, [
+      'first_name' => $params['firstName'],
+      'last_name' => $params['lastName'],
+      'email' => $params['email'],
+      'password' => md5($params['password']), // TODO: use something better than md5
+      'admin' => 1,
+    ]);
+  } catch (\PDOException $e) {
+    return $app->json([
+      'success' => false,
+      'error' => 'INSERT_USER',
+      'errorInfo' => $e->getMessage()
+    ]);
+  }
+
+  return $app->json([
+    'success' => true
+  ]);
 });
 
 $api->get('/installed', function () use ($app, $db) {
@@ -64,7 +87,7 @@ $api->mount('/project', function ($project) use ($app, $db) {
     if (!$name) {
       return $app->json([
         'success' => false,
-        'error' => 'MISSING_PARAMATER'
+        'error' => 'MISSING_PARAMETER'
       ]);
     }
 
