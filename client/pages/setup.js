@@ -24,7 +24,9 @@ export default comp({
       },
 
       steps: 3,
-      activeStep: 4
+      activeStep: 4,
+
+      redirecting: false
     }
   },
 
@@ -79,6 +81,12 @@ export default comp({
           this.install()
         }
       }
+    },
+
+    login () {
+        this.$refs.liftoff.classList.add('liftoff');
+        setTimeout(() => this.redirecting = true, 500);
+        setTimeout(() => this.$router.push('/'), 1550);
     },
 
     install () {

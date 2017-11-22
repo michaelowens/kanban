@@ -202,7 +202,7 @@ nav ul li a img {
   /*background: dodgerblue;*/
 }
 
-.board .col::after {
+.board .col:not(.projects)::after {
   content: " ";
   display: block;
   width: 2px;

@@ -1,7 +1,6 @@
 /*===============================
 =            Installer         =
 ===============================*/
-
 .installer {
 	width: 720px;
 	height: 540px;
@@ -21,7 +20,7 @@
 
 .installer div.liftoff {
 	animation: liftoff 2s ease-in;
-	animation-delay: .75s;
+	/*animation-delay: .1s;*/
 }
 
 .installer .installer_head {

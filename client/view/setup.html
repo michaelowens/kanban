@@ -1,78 +1,81 @@
-<div class="installer">
-  <div class="installer_head">
-    <h3>Installation Process</h3>
-  </div>
-  <div class="installer_container">
-    <template v-if="activeStep == 1">
-      <h2>What is your company called?</h2>
-      <p class="subtle">Before you can start using this application, we <br> need to gather some information about you.</p>
-    </template>
-    <template v-if="activeStep == 2">
-      <h2>What is your name?</h2>
-      <p class="subtle">We would like to know a little bit more about you.</p>
-    </template>
-    <template v-if="activeStep == 3">
-      <h2>Last piece of the puzzle</h2>
-      <p class="subtle">You are almost done!</p>
-    </template>
-    <template v-if="activeStep == 4">
-      <h2>Installation process complete!</h2>
-      <p class="subtle">Ready for liftoff!</p>
-  
-      <div class="liftoff">
-        <img src="assets/images/illustration_complete.svg" class="rocket" style="display: block; margin: 30px auto 30px;">        
-      </div>
-      <img src="assets/images/illustration_complete_ground.svg" style="display: block; margin: 0 auto;">
-
-    </template>
-
-    <form action="#" method="post" v-if="activeStep < 4">
-      <div class="input-row" v-if="error">
-        <span>Something went wrong setting up the database. Do you have write permissions in root folder?</span>
-      </div>
-
+<transition name="fade">
+  <div class="installer" v-if="!redirecting">
+    <div class="installer_head">
+      <h3>Installation Process</h3>
+    </div>
+    <div class="installer_container">
       <template v-if="activeStep == 1">
-        <div class="input-row" :class="{error: errorFields.includes('companyName')}">
-          <label for="settings.companyName">Company name</label>
-          <input type="text" name="settings.companyName" v-model="settings.companyName" placeholder="Acme inc."> 
-        </div>
+        <h2>What is your company called?</h2>
+        <p class="subtle">Before you can start using this application, we <br> need to gather some information about you.</p>
       </template>
-
       <template v-if="activeStep == 2">
-        <div class="input-row" :class="{error: errorFields.includes('firstName')}">
-          <label for="settings.firstName">First name</label>
-          <input type="text" name="settings.firstName" v-model="settings.firstName" placeholder="John"> 
+        <h2>What is your name?</h2>
+        <p class="subtle">We would like to know a little bit more about you.</p>
+      </template>
+      <template v-if="activeStep == 3">
+        <h2>Last piece of the puzzle</h2>
+        <p class="subtle">You are almost done!</p>
+      </template>
+      <template v-if="activeStep == 4">
+        <h2>Installation process complete!</h2>
+        <p class="subtle">Ready for liftoff!</p>
+    
+        <div ref="liftoff">
+          <img src="assets/images/illustration_complete.svg" class="rocket" style="display: block; margin: 30px auto 30px;">        
         </div>
-        <div class="input-row" :class="{error: errorFields.includes('lastName')}">
-          <label for="settings.lastName">Last name</label>
-          <input type="text" name="settings.lastName" v-model="settings.lastName" placeholder="Doe"> 
-        </div>
+        <img src="assets/images/illustration_complete_ground.svg" style="display: block; margin: 0 auto;">
+
       </template>
 
-      <template v-if="activeStep == 3">
-        <div class="input-row" :class="{error: errorFields.includes('email')}">
-          <label for="settings.email">Email</label>
-          <input type="text" name="settings.email" v-model="settings.email" placeholder="example@acmeinc.com"> 
+      <form action="#" method="post" v-if="activeStep < 4">
+        <div class="input-row" v-if="error">
+          <span>Something went wrong setting up the database. Do you have write permissions in root folder?</span>
         </div>
-        <div class="input-row" :class="{error: errorFields.includes('password')}">
-          <label for="settings.password">Password</label>
-          <input type="password" name="settings.password" v-model="settings.password" placeholder="**********"> 
+
+        <template v-if="activeStep == 1">
+          <div class="input-row" :class="{error: errorFields.includes('companyName')}">
+            <label for="settings.companyName">Company name</label>
+            <input type="text" name="settings.companyName" v-model="settings.companyName" placeholder="Acme inc."> 
+          </div>
+        </template>
+
+        <template v-if="activeStep == 2">
+          <div class="input-row" :class="{error: errorFields.includes('firstName')}">
+            <label for="settings.firstName">First name</label>
+            <input type="text" name="settings.firstName" v-model="settings.firstName" placeholder="John"> 
+          </div>
+          <div class="input-row" :class="{error: errorFields.includes('lastName')}">
+            <label for="settings.lastName">Last name</label>
+            <input type="text" name="settings.lastName" v-model="settings.lastName" placeholder="Doe"> 
+          </div>
+        </template>
+
+        <template v-if="activeStep == 3">
+          <div class="input-row" :class="{error: errorFields.includes('email')}">
+            <label for="settings.email">Email</label>
+            <input type="text" name="settings.email" v-model="settings.email" placeholder="example@acmeinc.com"> 
+          </div>
+          <div class="input-row" :class="{error: errorFields.includes('password')}">
+            <label for="settings.password">Password</label>
+            <input type="password" name="settings.password" v-model="settings.password" placeholder="**********"> 
+          </div>
+          <div class="input-row" :class="{error: errorFields.includes('passwordRepeat')}">
+            <label for="settings.passwordRepeat">Password (repeat)</label>
+            <input type="password" name="settings.passwordRepeat" v-model="settings.passwordRepeat" placeholder="**********"> 
+          </div>
+        </template>
+      </form>
+    </div>
+    <div class="installer_footer">
+      <div class="column_wrapper">
+        <div><a href="#" class="btn secondary" @click="back" v-if="activeStep > 1">Back</a></div>
+        <div><progress-indicator :steps="steps" :active-step="activeStep" @step-clicked="onStepClicked"></progress-indicator></div>
+        <div>
+            <a href="#" class="btn primary" @click="next" v-if="activeStep <= steps">Next</a>
+            <!-- <a href="#" class="btn primary" @click="$router.push('/')" v-if="activeStep > steps">Login</a> -->
+            <a href="#" class="btn primary" @click="login" v-if="activeStep > steps">Login</a>
         </div>
-        <div class="input-row" :class="{error: errorFields.includes('passwordRepeat')}">
-          <label for="settings.passwordRepeat">Password (repeat)</label>
-          <input type="password" name="settings.passwordRepeat" v-model="settings.passwordRepeat" placeholder="**********"> 
-        </div>
-      </template>
-    </form>
-  </div>
-  <div class="installer_footer">
-    <div class="column_wrapper">
-      <div><a href="#" class="btn secondary" @click="back" v-if="activeStep > 1">Back</a></div>
-      <div><progress-indicator :steps="steps" :active-step="activeStep" @step-clicked="onStepClicked"></progress-indicator></div>
-      <div>
-          <a href="#" class="btn primary" @click="next" v-if="activeStep <= steps">Next</a>
-          <a href="#" class="btn primary" @click="$router.push('/')" v-if="activeStep > steps">Login</a>
       </div>
     </div>
   </div>
-</div>
+</transition>

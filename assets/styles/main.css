@@ -2,6 +2,7 @@
 =            Imports            =
 ===============================*/
 @import url("normalize.css");
+@import url("utils.css");
 @import url("canvas.css");
 @import url("cards.css");
 @import url("cards-projects.css");
