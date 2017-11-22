@@ -10,26 +10,34 @@
 @import url("inputs.css");
 @import url("buttons.css");
 @import url("tooltips.css");
+@import url("dropdown.css");
 @import url("progress-indicator.css");
 @import url("typography.css");
 
 /* Variables */
 :root {
+  /* Fonts */
   --font-family: 'salesforce-regular';
   --font-family-bold: 'salesforce-bold';
   --font-family-light: 'salesforce-light';
+
+  /* Colors */
   --white: #ffffff;
   --black: #16325C;
-  --black-subtle: #8996AD;
-  --border: #D8DDE6;
-  --border-vivid: #A8B7C7;
-  --box-shadow: #F0F2F7;
-  --installer-footer: #F7F9FB;
-  --progress-bullet: #CFD7E6;
+  --black-subtle: #54698D;
   --green: #4BC076;
   --primary: #70B3F8;
   --primary-hover: #2B8EE5;
   --error: #C23934;
+
+  /* Util colors */
+  --border: #D8DDE6;
+  --border-vivid: #A8B7C7;
+  --box-shadow: #F0F2F7;
+  --box-shadow-darker: rgba(84, 105, 141, .3);
+  --installer-footer: #F7F9FB;
+  --progress-bullet: #CFD7E6;
+
 }
 
 * {
