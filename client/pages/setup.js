@@ -24,7 +24,7 @@ export default comp({
       },
 
       steps: 3,
-      activeStep: 4,
+      activeStep: 1,
 
       redirecting: false
     }
@@ -100,7 +100,7 @@ export default comp({
     },
 
     onStepClicked (stepNumber) {
-      console.log('I want to go to:', stepNumber)      
+      console.log('I want to go to:', stepNumber)
     }
   },
 

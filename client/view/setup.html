@@ -72,7 +72,6 @@
         <div><progress-indicator :steps="steps" :active-step="activeStep" @step-clicked="onStepClicked"></progress-indicator></div>
         <div>
             <a href="#" class="btn primary" @click="next" v-if="activeStep <= steps">Next</a>
-            <!-- <a href="#" class="btn primary" @click="$router.push('/')" v-if="activeStep > steps">Login</a> -->
             <a href="#" class="btn primary" @click="login" v-if="activeStep > steps">Login</a>
         </div>
       </div>
