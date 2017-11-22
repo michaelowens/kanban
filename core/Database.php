@@ -20,6 +20,7 @@ class Database {
 
     if ($this->pdo == null) {
         $this->pdo = new \PDO('sqlite:' . $this->config['file']);
+        $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     }
 
     return $this;
@@ -31,8 +32,8 @@ class Database {
       FROM sqlite_master
       WHERE type = 'table' AND name = 'projects'
     ");
-    $sql->execute(); 
-    $number_of_rows = $sql->fetchColumn(); 
+    $sql->execute();
+    $number_of_rows = $sql->fetchColumn();
     return $number_of_rows > 0;
   }
 

@@ -17,14 +17,21 @@
         <p class="subtle">You are almost done!</p>
       </template>
       <template v-if="activeStep == 4">
-        <h2>Installation process complete!</h2>
-        <p class="subtle">Ready for liftoff!</p>
-    
-        <div ref="liftoff">
-          <img src="assets/images/illustration_complete.svg" class="rocket" style="display: block; margin: 30px auto 30px;">        
-        </div>
-        <img src="assets/images/illustration_complete_ground.svg" style="display: block; margin: 0 auto;">
+        <transition name="fade" mode="out-in">
+          <div v-if="!installed" key="notInstalled">
+            <h2>Installing</h2>
+            <p class="subtle">Please stand by&hellip;</p>
+          </div>
+          <div v-else key="installed">
+            <h2>Installation process complete!</h2>
+            <p class="subtle">Ready for liftoff!</p>
 
+            <div ref="liftoff">
+              <img src="assets/images/illustration_complete.svg" class="rocket" style="display: block; margin: 30px auto 30px;">
+            </div>
+            <img src="assets/images/illustration_complete_ground.svg" style="display: block; margin: 0 auto;">
+          </div>
+        </transition>
       </template>
 
       <form action="#" method="post" v-if="activeStep < 4">
@@ -35,33 +42,33 @@
         <template v-if="activeStep == 1">
           <div class="input-row" :class="{error: errorFields.includes('companyName')}">
             <label for="settings.companyName">Company name</label>
-            <input type="text" name="settings.companyName" v-model="settings.companyName" placeholder="Acme inc."> 
+            <input type="text" name="settings.companyName" v-model="settings.companyName" placeholder="Acme inc.">
           </div>
         </template>
 
         <template v-if="activeStep == 2">
           <div class="input-row" :class="{error: errorFields.includes('firstName')}">
             <label for="settings.firstName">First name</label>
-            <input type="text" name="settings.firstName" v-model="settings.firstName" placeholder="John"> 
+            <input type="text" name="settings.firstName" v-model="settings.firstName" placeholder="John">
           </div>
           <div class="input-row" :class="{error: errorFields.includes('lastName')}">
             <label for="settings.lastName">Last name</label>
-            <input type="text" name="settings.lastName" v-model="settings.lastName" placeholder="Doe"> 
+            <input type="text" name="settings.lastName" v-model="settings.lastName" placeholder="Doe">
           </div>
         </template>
 
         <template v-if="activeStep == 3">
           <div class="input-row" :class="{error: errorFields.includes('email')}">
             <label for="settings.email">Email</label>
-            <input type="text" name="settings.email" v-model="settings.email" placeholder="example@acmeinc.com"> 
+            <input type="text" name="settings.email" v-model="settings.email" placeholder="example@acmeinc.com">
           </div>
           <div class="input-row" :class="{error: errorFields.includes('password')}">
             <label for="settings.password">Password</label>
-            <input type="password" name="settings.password" v-model="settings.password" placeholder="**********"> 
+            <input type="password" name="settings.password" v-model="settings.password" placeholder="**********">
           </div>
           <div class="input-row" :class="{error: errorFields.includes('passwordRepeat')}">
             <label for="settings.passwordRepeat">Password (repeat)</label>
-            <input type="password" name="settings.passwordRepeat" v-model="settings.passwordRepeat" placeholder="**********"> 
+            <input type="password" name="settings.passwordRepeat" v-model="settings.passwordRepeat" placeholder="**********">
           </div>
         </template>
       </form>
@@ -72,7 +79,10 @@
         <div><progress-indicator :steps="steps" :active-step="activeStep" @step-clicked="onStepClicked"></progress-indicator></div>
         <div>
             <a href="#" class="btn primary" @click="next" v-if="activeStep <= steps">Next</a>
-            <a href="#" class="btn primary" @click="login" v-if="activeStep > steps">Login</a>
+            <a href="#" class="btn primary" @click="login" v-if="activeStep > steps && !installed">
+              <img src="/assets/lightning/images/spinners/slds_spinner_inverse.gif" style="width: 16px;">
+            </a>
+            <a href="#" class="btn primary" @click="login" v-if="activeStep > steps && installed">Login</a>
         </div>
       </div>
     </div>

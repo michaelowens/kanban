@@ -15,16 +15,16 @@ export default comp({
       errorFields: [],
 
       settings: {
-        companyName: '',
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        passwordRepeat: ''
+        companyName: 'Test Company',
+        firstName: 'Michael',
+        lastName: 'Owens',
+        email: 'admin',
+        password: 'tmp',
+        passwordRepeat: 'tmp'
       },
 
       steps: 3,
-      activeStep: 1,
+      activeStep: 3,
 
       redirecting: false
     }
@@ -84,15 +84,16 @@ export default comp({
     },
 
     login () {
-        this.$refs.liftoff.classList.add('liftoff');
-        setTimeout(() => this.redirecting = true, 500);
-        setTimeout(() => this.$router.push('/'), 1550);
+      this.$refs.liftoff.classList.add('liftoff');
+      setTimeout(() => this.redirecting = true, 500);
+      setTimeout(() => this.$router.push('/'), 1550);
     },
 
     install () {
-      this.$fetch.json('/api/setup_db').then(response => {
+      this.$fetch.postJson('/api/setup', this.settings).then(response => {
         if (response) {
           //this.$router.push('/backlog')
+          this.installed = true
         } else {
           this.error = true
         }

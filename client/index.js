@@ -6,7 +6,7 @@ Vue.use(VueFetch)
 Vue.use(window.DragAndDropList)
 
 const router = new VueRouter({
-  routes, // short for `routes: routes`
+  routes,
   mode: 'history'
 })
 
@@ -20,12 +20,6 @@ router.beforeEach((to, from, next) => {
       next()
     })
 })
-
-// new Vue({
-//   components: {App},
-//   el: '#app',
-//   template: '<App />'
-// })
 
 const app = new Vue({
   router,
