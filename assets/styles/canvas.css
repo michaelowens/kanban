@@ -232,6 +232,11 @@ nav ul li a img {
   left: 0;
   top: 0;
   z-index: 15;
+  display: none;
+}
+
+.overlay.show {
+  display: block;
 }
 
 aside {
@@ -248,7 +253,7 @@ aside {
   transition: transform .25s;
 }
 
-aside.open {
+aside.show {
   transform: translateX(0);
   transition: transform .25s;
 }
