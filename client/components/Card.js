@@ -22,9 +22,19 @@ export default comp({
     dropdownOnEdit () {
       console.log('edit this card!', this.data)
     },
+
     dropdownOnDelete () {
       this.$refs.dropdown.showTooltip()
       console.log('delete this card!', this.data.id)
+    },
+
+    tooltipOnYes () {
+      console.log('deleting', this.data)
+      this.$emit('remove', this.data)
+    },
+
+    tooltipOnNo () {
+      console.log('not deleting', this.data)
     }
   }
 })

@@ -40,6 +40,14 @@ export default comp({
     }
   },
 
+  methods: {
+    removeCard (card) {
+      Object.keys(this.lists).forEach(listName => {
+        this.lists[listName] = this.lists[listName].filter((listCard) => listCard.id != card.id)
+      })
+    }
+  },
+
   created () {
     // this.$fetch.json('/api/installed')
     //   .then(installed => {

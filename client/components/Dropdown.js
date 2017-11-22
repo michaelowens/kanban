@@ -40,14 +40,16 @@ export default comp({
     },
 
     tooltipOnYes () {
+      this.$emit('tooltip-yes')
       this.showDropdown = !this.showDropdown
       this.tooltipVisible = !this.tooltipVisible
-      console.log('Task has been deleted')
+      // console.log(this.dropdownItem, 'Task has been deleted')
     },
 
     tooltipOnNo () {
+      this.$emit('tooltip-no')
       this.tooltipVisible = !this.tooltipVisible
-      console.log('Task deletion aborted')
+      // console.log('Task deletion aborted')
     }
   }
 })
