@@ -134,7 +134,7 @@ nav ul li a {
   transition: background .2s;
 }
 
-nav ul li a.active:before {
+nav ul li a.router-link-active:before {
   content: " ";
   display: block;
   background: linear-gradient(to bottom, #9EA7FC , #65B6F7);
