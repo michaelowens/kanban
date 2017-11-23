@@ -17,13 +17,13 @@
           <input type="text" name="email" v-model="email" placeholder="admin@acmeinc.com">
         </div>
 
-        <div class="input-row" :class="{error: errorFields.includes('email')}">
+        <div class="input-row" :class="{error: errorFields.includes('password')}">
           <label for="password">Password</label>
-          <input type="text" name="password" v-model="password" placeholder="**********">
+          <input type="password" name="password" v-model="password" placeholder="**********">
         </div>
 
         <div class="input-row">
-          <a href="#" class="btn primary" @click="login">Login</a>
+          <a href="#" class="btn primary" @click.prevent="login">Login</a>
         </div>
       </form>
     </div>

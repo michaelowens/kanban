@@ -52,8 +52,15 @@ class Database {
     return $this->pdo->query($q);
   }
 
-  public function fetch($q) {
-    $stmt = $this->pdo->query($q);
+  public function fetch($q, $params) {
+    $stmt = $this->prepare($q, $params);
+    $stmt->execute();
+    return $stmt->fetch(\PDO::FETCH_ASSOC);
+  }
+
+  public function fetchArray($q, $params) {
+    $stmt = $this->prepare($q, $params);
+    $stmt->execute();
 
     $tables = [];
     while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
@@ -67,19 +74,21 @@ class Database {
     return $this->pdo->exec($q);
   }
 
-  public function prepare($q) {
-    return $this->pdo->prepare($q);
-  }
-
-  public function insert($q, $params) {
-    $stmt = $this->prepare($q);
-
-    if (!$stmt) {
-      return false;
-    }
+  public function prepare($q, $params) {
+    $stmt = $this->pdo->prepare($q);
 
     foreach ($params as $param => &$value) {
       $stmt->bindParam(':' . $param, $value);
+    }
+
+    return $stmt;
+  }
+
+  public function insert($q, $params) {
+    $stmt = $this->prepare($q, $params);
+
+    if (!$stmt) {
+      return false;
     }
 
     return $stmt->execute();

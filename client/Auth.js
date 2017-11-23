@@ -13,12 +13,38 @@ Auth.install = (Vue, options) => {
       }
     },
 
-    methods: {
-      login () {
-        this.user = {
-          name: 'Michael'
+    computed: {
+      fullName () {
+        if (Object.keys(this.user).length <= 0) {
+          return ''
         }
-        this.authenticated = true
+
+        return `${this.user.first_name} ${this.user.last_name}`
+      }
+    },
+
+    methods: {
+      login (email, password) {
+        return new Promise((resolve, reject) => {
+          console.log('[$auth.login]', 'login')
+          this.$fetch.postJson('/api/user/login', {email, password})
+            .then(response => {
+              if (!response.success) {
+                console.error('[$auth.login]', response)
+                this.user = {}
+                this.authenticated = false
+                return reject(response.error)
+              }
+
+              this.user = response.user
+              // {
+              //   token: response.token,
+              //   email: response.email
+              // }
+              this.authenticated = true
+              resolve(this.user)
+            })
+        })
       }
     }
   })

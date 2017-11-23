@@ -73,12 +73,45 @@ $api->get('/installed', function () use ($app, $db) {
 
 
 /**
+ * User
+ */
+$api->mount('/user', function ($user) use ($app, $db) {
+  $user->post('/login', function (Request $request) use ($app, $db) {
+    $email = $request->get('email');
+    $password = $request->get('password');
+
+    if (!$email || !$password) {
+      return $app->json([
+        'success' => false,
+        'error' => 'MISSING_PARAMETER'
+      ]);
+    }
+
+    $q = "SELECT id, first_name, last_name, email, admin FROM users WHERE email=:email AND password=:password LIMIT 1";
+    $user = $db->fetch($q, ['email' => $email, 'password' => md5($password)]);
+
+    if (!$user) {
+      return $app->json([
+        'success' => false,
+        'error' => 'INCORRECT_CREDENTIALS'
+      ]);
+    }
+
+    return $app->json([
+      'success' => true,
+      'user' => $user
+    ]);
+  });
+});
+
+
+/**
  * Projects
  */
 $api->mount('/project', function ($project) use ($app, $db) {
   $project->get('/list', function () use ($app, $db) {
     $q = "SELECT * FROM projects";
-    $projects = $db->fetch($q);
+    $projects = $db->fetchArray($q);
     return $app->json($projects);
   });
 

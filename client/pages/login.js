@@ -10,7 +10,7 @@ export default comp({
 
   data: () => {
     return {
-      error: false,
+      error: null,
       errorFields: [],
 
       email: '',
@@ -18,14 +18,38 @@ export default comp({
     }
   },
 
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      if (vm.$auth.authenticated) {
+        vm.$router.push('/backlog')
+        return
+      }
+    })
+  },
+
   methods: {
-    back () {
-    },
-
-    next () {
-    },
-
     login () {
+      this.error = null
+      this.errorFields = []
+
+      if (!this.email || !this.password) {
+        if (!this.email) {
+          this.errorFields.push('email')
+        }
+
+        if (!this.password) {
+          this.errorFields.push('password')
+        }
+
+        return
+      }
+
+      this.$auth.login(this.email, this.password)
+        .then(user => {
+          console.log('Logged in as', this.$auth.fullName)
+          this.$router.push('/backlog')
+        })
+        .catch(error => this.error = error)
       // this.$refs.liftoff.classList.add('liftoff');
       // setTimeout(() => this.redirecting = true, 500);
       // setTimeout(() => this.$router.push('/'), 1550);
