@@ -2,11 +2,13 @@
   <div class="board_top_row">
     <h1>Backlog</h1>
     <div>
-      <a href="#" class="btn secondary with-icon">
+      <a href="#" @click="$auth.login()" class="btn secondary with-icon">
         <img src="assets/icons/plus.svg">
         Add task
       </a>
     </div>
+
+    <div>{{ $auth.authenticated }} - {{ $auth.user.name }}</div>
   </div>
 
   <div class="board">

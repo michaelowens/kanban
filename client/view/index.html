@@ -1,6 +1,6 @@
 <div>
-  <navbar v-if="$route.name != 'setup'"></navbar>
-  <sidenav v-if="$route.name != 'setup'"></sidenav>
+  <navbar v-if="!['setup', 'login'].includes($route.name)"></navbar>
+  <sidenav v-if="!['setup', 'login'].includes($route.name)"></sidenav>
 
   <router-view></router-view>
 
@@ -9,15 +9,15 @@
     <form action="" method="post">
       <router-link to=""><img src="assets/icons/plus.svg" class="close"></router-link>
       <h1>Create Task</h1>
-      
+
       <div class="input-row">
         <label for="taskname">Task name</label>
-        <input type="text" name="taskname" id="taskname" placeholder="Versio alpha 0.2"> 
+        <input type="text" name="taskname" id="taskname" placeholder="Versio alpha 0.2">
       </div>
 
       <div class="input-row">
         <label for="duedate">Due date</label>
-        <input type="text" name="duedate" id="duedate" placeholder="Ex; 12-12-2017"> 
+        <input type="text" name="duedate" id="duedate" placeholder="Ex; 12-12-2017">
       </div>
 
       <div class="input-row">

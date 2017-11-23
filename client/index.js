@@ -1,7 +1,9 @@
 import App from './App.js'
 import routes from './Routes.js'
 import VueFetch from './VueFetch.js'
+import Auth from './Auth.js'
 
+Vue.use(Auth)
 Vue.use(VueFetch)
 Vue.use(window.DragAndDropList)
 

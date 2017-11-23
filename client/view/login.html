@@ -1,0 +1,40 @@
+<transition name="fade">
+  <div class="installer">
+    <div class="installer_head">
+      <h3>Acme Inc</h3>
+    </div>
+    <div class="installer_container">
+      <h2>Login?</h2>
+      <p class="subtle">Open the gatest and start managing</p>
+
+      <form action="#" method="post">
+        <div class="input-row" v-if="error">
+          <span>Incorrect email and/or password.</span>
+        </div>
+
+        <div class="input-row" :class="{error: errorFields.includes('email')}">
+          <label for="email">Email</label>
+          <input type="text" name="email" v-model="email" placeholder="admin@acmeinc.com">
+        </div>
+
+        <div class="input-row" :class="{error: errorFields.includes('email')}">
+          <label for="password">Password</label>
+          <input type="text" name="password" v-model="password" placeholder="**********">
+        </div>
+
+        <div class="input-row">
+          <a href="#" class="btn primary" @click="login">Login</a>
+        </div>
+      </form>
+    </div>
+    <div class="installer_footer">
+      <div class="column_wrapper">
+        <div></div>
+        <div>
+          Forgot password?
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</transition>
