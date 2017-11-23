@@ -19,7 +19,7 @@
           :index="index"
           :wrapper="list"
           effect-allowed="move">
-          <card :data="item"></card>
+          <card :data="item" @remove="removeCard"></card>
         </vddl-draggable>
         <vddl-placeholder class="card dragging" style="opacity: 0.12"></vddl-placeholder>
       </vddl-list>

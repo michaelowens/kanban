@@ -1,0 +1,10 @@
+<div class="options" @click="showDropdown = !showDropdown">
+  <img src="../../assets/icons/chevron-down.svg">
+
+  <div class="dropdown" v-if="showDropdown">
+    <ul>
+      <li v-for="(fn, label) in items"><a href="#" @click.stop="fn">{{ label }}</a></li>
+    </ul>
+    <tooltip v-if="tooltipVisible" :options="tooltipOptions"></tooltip>
+  </div>
+</div>

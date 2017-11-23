@@ -1,0 +1,9 @@
+<div class="tooltip">
+  <span>Are you sure you want to remove this task?</span>
+  <div class="row">
+    <a v-for="option in options" href="#" class="btn" :class="option.classNames" @click.stop="option.onClick">
+      {{ option.label }}
+    </a>
+    <!-- <a href="" class="btn secondary">No</a> -->
+  </div>
+</div>
