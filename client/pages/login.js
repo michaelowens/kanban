@@ -14,7 +14,9 @@ export default comp({
       errorFields: [],
 
       email: '',
-      password: ''
+      password: '',
+
+      redirecting: false
     }
   },
 
@@ -47,7 +49,8 @@ export default comp({
       this.$auth.login(this.email, this.password)
         .then(user => {
           console.log('Logged in as', this.$auth.fullName)
-          this.$router.push('/backlog')
+          this.redirecting = true
+          setTimeout(() => this.$router.push('/backlog'), 500) // wait for fade
         })
         .catch(error => this.error = error)
       // this.$refs.liftoff.classList.add('liftoff');
