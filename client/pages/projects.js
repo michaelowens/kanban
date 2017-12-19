@@ -10,7 +10,24 @@ export default comp({
   data: () => {
     return {
       installed: null,
-      projects: [],
+      projects: [
+        {
+          project_name: "Resourceful",
+          project_description: `Using our own kanban tool to keep track of
+          development progress on this kanban tool? :) The rest is just a bunch
+          of text so we can see how much of this crap can fit into a project card
+          and how it looks.`,
+          project_milestones: 3,
+          project_totalEstimates: "1d 6h",
+        },
+        {
+          project_name: "JQtpl",
+          project_description: `Creating a jQuery template engine to
+          inject shizzle drizzle into pendoria, hacky hacky`,
+          project_milestones: 1,
+          project_totalEstimates: "7h",
+        },
+      ],
       showAddProject: false,
       newProject: {
         name: ''

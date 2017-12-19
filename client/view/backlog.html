@@ -47,12 +47,12 @@
 
   <button @click="isBacklog = !isBacklog">toggle view</button> <!-- toggle board & backlog view-->
 
-  <div class="board backlog">
+  <div class="board remove-grid">
     <div><h2>Initial release v1.0</h2> <small class="subtle">Due date: 31-12-2017 &nbsp; | &nbsp; Total estimated time: 1d 9h &nbsp; | &nbsp; 7 tasks </small></div>
 
     <div class="backlog_task_wrapper">
 
-      <vddl-list :list="backlog" :horizontal="false">
+      <vddl-list :list="backlog" :horizontal="false" class="vddl-backlog">
         <vddl-draggable class="card-wrapper" v-for="(item, index) in backlog" :key="item.id"
           :draggable="item"
           :index="index"
@@ -65,11 +65,11 @@
     </div>
   </div>
 
-  <div class="board backlog">
+  <div class="board remove-grid">
     <div><h2>Backlog</h2> <small class="subtle">0 tasks </small></div>
 
     <div class="backlog_task_wrapper minimal_cards">
-      <div class="empty"><span class="subtle">There are currently no tasks in the backlog, click to create one.</span></div>
+      <div class="empty"><span class="subtle">There are currently no tasks in the backlog, click me to create your first task.</span></div>
     </div>
   </div>
 </div>

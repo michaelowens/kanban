@@ -8,7 +8,7 @@
       </a>
     </div>
   </div>
-  
+
   <div v-if="showAddProject">
     <input type="text" v-model="newProject.name" placeholder="Project name">
     <a href="#" @click="addProject" class="btn primary with-icon">
@@ -16,15 +16,15 @@
     </a>
   </div>
 
-  <div class="board">
-    <div class="projects col" v-for="project in projects"> 
+  <div class="board" style="grid-template-columns: repeat(2, 1fr)">
+    <div class="projects col" v-for="project in projects">
       <div class="project-card">
         <div class="header_card">
           <h2>{{ project.project_name }}</h2>
           <div class="options"><img src="../../assets/icons/chevron-down.svg"></div>
         </div>
 
-        <p class="subtle">Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores!</p>        
+        <p class="subtle">{{ project.project_description }}</p>
 
         <div class="inner_card">
           <div class="assignees">
@@ -32,21 +32,31 @@
             <div>
               <img src="https://secure.gravatar.com/avatar/ca7f4cddd0331a3956fed75f4ee8ba5d?r=g&d=https://avatar-cdn.atlassian.com/default/40&s=40" alt="">
               <img src="https://secure.gravatar.com/avatar/ca7f4cddd0331a3956fed75f4ee8ba5d?r=g&d=https://avatar-cdn.atlassian.com/default/40&s=40" alt="">
-              <img src="https://secure.gravatar.com/avatar/ca7f4cddd0331a3956fed75f4ee8ba5d?r=g&d=https://avatar-cdn.atlassian.com/default/40&s=40" alt="">
             </div>
           </div>
 
           <div class="milestones">
             <p>Milestones:</p>
-            <span>3</span>
+            <span>{{ project.project_milestones }}</span>
           </div>
 
           <div class="hours">
-            <p>Total estimated hours:</p>
-            <span>28h</span>
+            <p>Estimated hours:</p>
+            <span>{{ project.project_totalEstimates }}</span>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+<!--   <div class="board">
+    <div class="getting_started">
+      <h2 class="subtle">You have no projects</h2>
+      <p class="subtle">Create your first project to get started!</p>
+      <a href="#" @click="openAddProject" class="btn secondary with-icon">
+        <img src="assets/icons/plus.svg">
+        Create project
+      </a>
+    </div>
+  </div> -->
 </div>

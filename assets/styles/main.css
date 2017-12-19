@@ -25,6 +25,7 @@
   --white: #ffffff;
   --black: #16325C;
   --black-subtle: #54698D;
+  --logo-blue: #ABC8ED;
   --badge: #E0E5EE;
   --green: #4BC076;
   --primary: #70B3F8;
@@ -68,6 +69,10 @@ body {
 .vddl-list {
   min-height: calc(100vh - 200px);
   width: 100%;
+}
+
+.vddl-list.vddl-backlog {
+  min-height: 100px;
 }
 
 .vddl-dragging-source {
