@@ -5,11 +5,11 @@
     </div>
     <div class="installer_container">
       <h2>Login?</h2>
-      <p class="subtle">Open the gatest and start managing</p>
+      <p class="subtle">Open the gates and start managing!</p>
 
       <form action="#" method="post">
         <div class="input-row" v-if="error">
-          <span>Incorrect email and/or password.</span>
+          <span class="error">Incorrect email and/or password.</span>
         </div>
 
         <div class="input-row" :class="{error: errorFields.includes('email')}">
