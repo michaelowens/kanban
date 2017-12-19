@@ -22,9 +22,9 @@ header .company_name {
 
 header .company_name span {
   font-family: var(--font-family-bold);
-  font-size: 20px;
+  font-size: 14px;
   color: var(--white);
-  line-height: 1;
+  line-height: 2.6;
   vertical-align: middle;
 }
 
@@ -83,7 +83,7 @@ header .inner_container .home:after {
 
 header .inner_container .user {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: auto max-content;
 }
 
 header .inner_container .user span {
@@ -96,6 +96,7 @@ header .inner_container .user img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  margin-right: 20px;
 }
 
 /*================================
@@ -178,13 +179,7 @@ nav ul li a img {
 
 .board_top_row h1 {
   margin-right: 20px;
-}
-
-.board_top_row small {
-  font-size: 12px;
-  color: var(--black-subtle);
-  display: block;
-  padding-top: 4px;
+  line-height: 1;
 }
 
 .board_top_row .btn {
@@ -200,6 +195,26 @@ nav ul li a img {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: max-content;
   grid-column-gap: 45px;
+}
+
+.board.backlog {
+  grid-template-columns: 100%;
+  height: auto;
+}
+
+.board .backlog_task_wrapper {
+  width: 100%;
+  display: block;
+  margin-top: 30px;
+  position: relative;
+}
+
+.board .backlog_task_wrapper .empty {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 2px dashed var(--border);
+  text-align: center;
 }
 
 .board .col {
@@ -232,7 +247,9 @@ nav ul li a img {
 }
 
 .board .col .quick-task-wrapper input:focus,
-.board .col .quick-task-wrapper input:active {
+.board .col .quick-task-wrapper input:active,
+.board .col .quick-task-wrapper input:focus + img,
+.board .col .quick-task-wrapper input:active + img {
   opacity: 1;
   transition: opacity .2s;
 }
@@ -242,12 +259,8 @@ nav ul li a img {
   right: 10px;
   top: 10px;
   cursor: pointer;
-  display: none;
-}
-
-.board .col .quick-task-wrapper input:focus + img,
-.board .col .quick-task-wrapper input:active + img {
-  display: block;
+  opacity:  .3;
+  transition: opacity .2s;
 }
 
 .board .col:not(.projects)::after {

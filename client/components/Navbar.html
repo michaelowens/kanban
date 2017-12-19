@@ -1,11 +1,11 @@
 <header>
-  <div class="company_name"><span>Acme inc</span></div>
+  <div class="company_name"><span>Resourceful</span></div>
   <div class="inner_container">
     <div class="searchbar">
       <!-- <img src="assets/icons/search.svg"> -->
       <!-- <span><strong>Project:</strong> &nbsp; Test Project Vapeneesj</span> -->
       <!-- <span>No project has been selected</span> -->
-      <span>logged in: {{ $auth.authenticated }} - {{ $auth.fullName }}</span>
+      <span>logged in: {{ $auth.authenticated }}</span>
     </div>
 
     <div>
@@ -18,8 +18,8 @@
     <div class="home"><router-link to="/projects"><img src="assets/icons/home.svg"></router-link></div>
 
     <div class="user">
-      <span>Username</span>
-      <img src="https://secure.gravatar.com/avatar/ca7f4cddd0331a3956fed75f4ee8ba5d?r=g&d=https://avatar-cdn.atlassian.com/default/40&s=40" alt="">
+      <span>{{ $auth.fullName }}</span>
+      <img src="assets/icons/pic_holder.svg" alt="Avatar">
     </div>
   </div>
 </header>

@@ -8,31 +8,47 @@ export default comp({
 
   data: () => {
     return {
+      isBacklog: false, // Switching between backlog & board view as test
       how: 'dynamically',
       installed: null,
       projects: [],
-      "lists": {
-        "A": [
+      quickTaskTitles: {},
+
+      backlog: [
+        {
+          "id": 1,
+          "title": "Item A1",
+          label: "Front-end",
+        },
+        {
+          "id": 2,
+          "title": "Item A2",
+        },
+      ],
+
+      lists: {
+        A: [
           {
             "id": 1,
-            "label": "Item A1"
+            "title": "Item A1",
+            label: "Front-end",
           },
           {
             "id": 2,
-            "label": "Item A2"
+            "title": "Item A2",
           },
         ],
-        "B": [
+        B: [
           {
             "id": 3,
-            "label": "Item Marcel1"
+            "title": "Item Marcel1",
           },
-          //...
         ],
-        "C": [
+        C: [
           {
             "id": 4,
-            "label": "Djilano swekkin"
+            "title": "Djilano swekkin",
+            label: "Front-end",
           },
         ]
       }
@@ -44,6 +60,15 @@ export default comp({
       Object.keys(this.lists).forEach(listName => {
         this.lists[listName] = this.lists[listName].filter((listCard) => listCard.id != card.id)
       })
+    },
+
+    clearQuickTask (index) {
+      this.quickTaskTitles[index] = ''
+      this.$refs.quickTaskInputs[index].focus()
+    },
+
+    addQuickTask (index) {
+      console.log("adding quicktask:", index, this.quickTaskTitles[index])
     }
   },
 

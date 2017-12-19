@@ -86,7 +86,7 @@ export default comp({
     login () {
       this.$refs.liftoff.classList.add('liftoff');
       setTimeout(() => this.redirecting = true, 500);
-      setTimeout(() => this.$router.push('/'), 1550);
+      setTimeout(() => this.$router.push('/login'), 1550);
     },
 
     install () {

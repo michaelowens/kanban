@@ -1,9 +1,10 @@
-<div class="card">
+<div class="card" :class="{mini: mini}">
   <div class="header_card">
-    <img src="https://secure.gravatar.com/avatar/ca7f4cddd0331a3956fed75f4ee8ba5d?r=g&d=https://avatar-cdn.atlassian.com/default/40&s=40" class="avatar">
-    <span title="[object Object]">{{ data.label }}</span>
-    <div><time v-if="estimate">1d 4h</time></div>
-    <dropdown ref="dropdown" :items="dropdownItems" @tooltip-yes="tooltipOnYes"></dropdown>
+    <img src="assets/icons/pic_holder.svg" class="avatar">
+    <span title="[object Object]">{{ data.title }}</span>
+    <div><div class="badge" v-if="data.label">{{ data.label }}</div></div>
+    <div><time v-if="estimate">{{ estimate }}</time></div>
+    <dropdown v-if="!mini" ref="dropdown" :items="dropdownItems" @tooltip-yes="tooltipOnYes"></dropdown>
   </div>
-  <p class="subtle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam!</p>
+  <p class="subtle" v-if="!mini">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam!</p>
 </div>

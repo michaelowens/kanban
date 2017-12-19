@@ -7,6 +7,10 @@ Auth.install = (Vue, options) => {
 
   let $data = new Vue({
     data () {
+      if (document.location.href.match('localhost')) {
+        // return {"user":{"id":"1","first_name":"Djilano","last_name":"Smit","email":"admin","admin":"1"},"authenticated":true}
+      }
+
       return {
         user: {},
         authenticated: false

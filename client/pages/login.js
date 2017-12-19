@@ -52,7 +52,10 @@ export default comp({
           this.redirecting = true
           setTimeout(() => this.$router.push('/backlog'), 500) // wait for fade
         })
-        .catch(error => this.error = error)
+        .catch(error => {
+          this.error = error
+          this.errorFields.push('email', 'password')
+        })
       // this.$refs.liftoff.classList.add('liftoff');
       // setTimeout(() => this.redirecting = true, 500);
       // setTimeout(() => this.$router.push('/'), 1550);

@@ -6,7 +6,11 @@ export default comp({
   components: {Dropdown},
 
   props: {
-    data: Object
+    data: Object,
+    mini: {
+      type: Boolean,
+      default: false
+    }
   },
 
   data () {
@@ -16,7 +20,7 @@ export default comp({
         'Delete': this.dropdownOnDelete
       },
 
-      estimate: true
+      estimate: '1d 4h'
     }
   },
 
