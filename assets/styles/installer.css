@@ -77,6 +77,18 @@
 	padding-top: 15px;
 }
 
+.installer .installer_container form .input-row.display-grid {
+	grid-template-columns: 50% 50%;
+}
+
+.installer .installer_container form .input-row.display-grid div:first-of-type {
+	padding-top: 7px;
+}
+
+.installer .installer_container form .input-row.display-grid div:last-of-type {
+	text-align: right;
+}
+
 @keyframes spaceboots {
 	0% { transform: translate(2px, 1px) rotate(0deg); }
 	10% { transform: translate(-1px, -2px) rotate(-1deg); }

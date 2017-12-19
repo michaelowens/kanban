@@ -45,7 +45,7 @@ p {
 	line-height: 1.5;
 }
 
-p.subtle {
+.subtle {
     color: var(--black-subtle);
 }
 
