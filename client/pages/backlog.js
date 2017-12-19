@@ -71,16 +71,4 @@ export default comp({
       console.log("adding quicktask:", index, this.quickTaskTitles[index])
     }
   },
-
-  created () {
-    // this.$fetch.json('/api/installed')
-    //   .then(installed => {
-    //     this.installed = installed
-    //     if (!installed) {
-    //       this.$router.push('/setup')
-    //     }
-    //   })
-    // this.$fetch.json('/api/project/list')
-    //   .then(projects => this.projects = projects)
-  }
 })

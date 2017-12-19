@@ -1,5 +1,6 @@
 import comp from '../comp.js'
-import Tooltip from '../components/Tooltip.js'
+import Tooltip from './Tooltip.js'
+import {hasParent} from '../utils.js'
 
 export default comp({
   templateURL: '/client/components/Dropdown.html',
@@ -9,7 +10,8 @@ export default comp({
 
   data () {
     return {
-      showDropdown: false,
+      dropdownSelector: '.dropdown_wrapper',
+      dropdownVisible: false,
       tooltipVisible: false,
       tooltipOptions: [
         {
@@ -27,6 +29,35 @@ export default comp({
   },
 
   methods: {
+    toggleDropdown () {
+      this.dropdownVisible = !this.dropdownVisible
+      if (this.dropdownVisible) {
+        this.bindDocumentEvent()
+      } else {
+        this.unbindDocumentEvent()
+      }
+    },
+
+    showDropdown () {
+      if (this.dropdownVisible) {
+        return
+      }
+
+      this.dropdownVisible = true
+      this.bindDocumentEvent()
+    },
+
+    hideDropdown () {
+      if (!this.dropdownVisible) {
+        return
+      }
+
+      this.hideTooltip()
+
+      this.dropdownVisible = false
+      this.unbindDocumentEvent()
+    },
+
     showTooltip () {
       this.tooltipVisible = true
     },
@@ -35,21 +66,33 @@ export default comp({
       this.tooltipVisible = false
     },
 
+    bindDocumentEvent () {
+      document.addEventListener('click', this.handleDocumentClick, true)
+    },
+
+    handleDocumentClick (e) {
+      if (!hasParent(e.target, this.dropdownSelector)) {
+        this.hideDropdown()
+      }
+    },
+
+    unbindDocumentEvent () {
+      document.removeEventListener('click', this.handleDocumentClick, true)
+    },
+
     toggleTooltip () {
       this.tooltipVisible = !this.tooltipVisible
     },
 
     tooltipOnYes () {
       this.$emit('tooltip-yes')
-      this.showDropdown = !this.showDropdown
-      this.tooltipVisible = !this.tooltipVisible
-      // console.log(this.dropdownItem, 'Task has been deleted')
+      this.hideTooltip()
+      this.hideDropdown()
     },
 
     tooltipOnNo () {
       this.$emit('tooltip-no')
-      this.tooltipVisible = !this.tooltipVisible
-      // console.log('Task deletion aborted')
+      this.hideTooltip()
     }
   }
 })

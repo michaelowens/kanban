@@ -1,7 +1,7 @@
-<div class="options" @click="showDropdown = !showDropdown">
-  <img src="../../assets/icons/chevron-down.svg">
+<div class="options dropdown_wrapper">
+  <img src="../../assets/icons/chevron-down.svg" @click="toggleDropdown">
 
-  <div class="dropdown" v-if="showDropdown">
+  <div class="dropdown" v-if="dropdownVisible">
     <ul>
       <li v-for="(fn, label) in items"><a href="#" @click.stop="fn">{{ label }}</a></li>
     </ul>
