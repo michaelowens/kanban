@@ -21,7 +21,6 @@ export default comp({
             "id": 2,
             "label": "Item A2"
           },
-          //...
         ],
         "B": [
           {

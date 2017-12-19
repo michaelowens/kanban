@@ -14,7 +14,9 @@ export default comp({
       dropdownItems: {
         'Edit': this.dropdownOnEdit,
         'Delete': this.dropdownOnDelete
-      }
+      },
+
+      estimate: true
     }
   },
 

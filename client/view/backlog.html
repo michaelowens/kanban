@@ -8,11 +8,15 @@
       </a>
     </div>
 
-    <div>{{ $auth.authenticated }} - {{ $auth.fullName }}</div>
+    <small>(Milestone name)</small>
   </div>
 
   <div class="board">
     <div class="col" v-for="(list, listName) in lists">
+      <h2>To do</h2>
+
+      <input type="text" placeholder="Create a quick task">
+
       <vddl-list :list="list" :horizontal="false">
         <vddl-draggable class="card-wrapper" v-for="(item, index) in list" :key="item.id"
           :draggable="item"

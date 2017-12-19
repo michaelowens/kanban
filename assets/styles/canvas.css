@@ -104,7 +104,7 @@ header .inner_container .user img {
 nav {
   background: var(--white);
   width: 120px;
-  height: calc(100vh - 60px);
+  height: 100%;
   position: absolute;
   left: 0;
   top: 60px;
@@ -180,6 +180,13 @@ nav ul li a img {
   margin-right: 20px;
 }
 
+.board_top_row small {
+  font-size: 12px;
+  color: var(--black-subtle);
+  display: block;
+  padding-top: 4px;
+}
+
 .board_top_row .btn {
   margin-top: 2px;
 }
@@ -200,6 +207,34 @@ nav ul li a img {
   height: 100%;
   position: relative;
   /*background: dodgerblue;*/
+}
+
+.board .col h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.board .col input {
+  width: 100%;
+  background-color: var(--white);
+  background-image: url('../../assets/icons/plus.svg');
+  background-position-x: 10px;
+  background-position-y: 8px;
+  background-repeat: no-repeat;
+  padding-left: 34px;
+  opacity: .3;
+  transition: opacity .2s;
+}
+
+.board .col input:focus,
+.board .col input:active {
+  background-color: var(--white);
+  background-image: url('../../assets/icons/plus.svg'), url('../../assets/icons/cross-round.svg');
+  background-position: 10px 8px, calc(100% - 10px) 8px;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition: opacity .2s;
 }
 
 .board .col:not(.projects)::after {

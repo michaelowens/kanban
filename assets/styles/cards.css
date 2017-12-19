@@ -9,7 +9,9 @@
 	border: 1px solid var(--border);
 	display: block;
 	padding: 10px 15px;
-	cursor: pointer;
+    cursor: pointer; /* Fallback cursor */
+	cursor: -webkit-grab;
+    cursor: -moz-grab;
 	margin: 0 auto;
 	position: relative;
 	margin-bottom: 10px;
@@ -85,6 +87,8 @@
 	  var(--border-vivid) 10px,
 	  var(--border-vivid) 20px
 	);
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;;
 }
 
 .card.dragging::before {
