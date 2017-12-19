@@ -214,27 +214,40 @@ nav ul li a img {
   margin-bottom: 20px;
 }
 
+.board .col .quick-task-wrapper {
+  position: relative;
+  width: 100%;
+}
 
-.board .col input {
+.board .col .quick-task-wrapper input {
   width: 100%;
   background-color: var(--white);
   background-image: url('../../assets/icons/plus.svg');
   background-position-x: 10px;
   background-position-y: 8px;
   background-repeat: no-repeat;
-  padding-left: 34px;
+  padding: 0 34px;
   opacity: .3;
   transition: opacity .2s;
 }
 
-.board .col input:focus,
-.board .col input:active {
-  background-color: var(--white);
-  background-image: url('../../assets/icons/plus.svg'), url('../../assets/icons/cross-round.svg');
-  background-position: 10px 8px, calc(100% - 10px) 8px;
-  background-repeat: no-repeat;
+.board .col .quick-task-wrapper input:focus,
+.board .col .quick-task-wrapper input:active {
   opacity: 1;
   transition: opacity .2s;
+}
+
+.board .col .quick-task-wrapper img {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+.board .col .quick-task-wrapper input:focus + img,
+.board .col .quick-task-wrapper input:active + img {
+  display: block;
 }
 
 .board .col:not(.projects)::after {
