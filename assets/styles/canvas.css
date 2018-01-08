@@ -186,6 +186,34 @@ nav ul li a img {
   margin-top: 2px;
 }
 
+.toggle_view {
+  max-width: 200px;
+  width: 100%;
+  display: block;
+  color: var(--black-subtle);
+}
+
+.toggle_view .wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.toggle_view .wrapper div img {
+  width: 16px;
+  height: 16px;
+  padding: 5px;
+  vertical-align: middle;
+  margin-right: 10px;
+  cursor: pointer;
+  box-sizing: content-box;
+}
+
+.toggle_view .wrapper div img.active {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
 .board {
   /*background: #ff69b461;*/
   width: 100%;

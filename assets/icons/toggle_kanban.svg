@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="kanban" fill="#54698D" fill-rule="nonzero">
+            <path d="M30,15.5 C30,14.7 29.3,14 28.5,14 L19.5,14 C18.7,14 18,14.7 18,15.5 L18,42.5 C18,43.3 18.7,44 19.5,44 L28.5,44 C29.3,44 30,43.3 30,42.5 L30,15.5 Z M12,15.5 C12,14.7 11.3,14 10.5,14 L1.5,14 C0.7,14 0,14.7 0,15.5 L0,46.5 C0,47.3 0.7,48 1.5,48 L10.5,48 C11.3,48 12,47.3 12,46.5 L12,15.5 Z M48,15.5 C48,14.7 47.3,14 46.5,14 L37.5,14 C36.7,14 36,14.7 36,15.5 L36,38.5 C36,39.3 36.7,40 37.5,40 L46.5,40 C47.3,40 48,39.3 48,38.5 L48,15.5 Z M48,1.5 C48,0.7 47.3,0 46.5,0 L1.5,0 C0.7,0 0,0.7 0,1.5 L0,6.5 C0,7.3 0.7,8 1.5,8 L46.5,8 C47.3,8 48,7.3 48,6.5 L48,1.5 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
