@@ -190,6 +190,7 @@ nav ul li a img {
   max-width: 200px;
   width: 100%;
   display: block;
+  margin-top: -20px;
   color: var(--black-subtle);
 }
 
@@ -198,20 +199,29 @@ nav ul li a img {
   grid-template-columns: auto auto;
 }
 
+.toggle_view .wrapper div span {
+  display: block;
+  margin-top: 4px;
+}
+
 .toggle_view .wrapper div img {
+  background: transparent;
   width: 16px;
   height: 16px;
   padding: 5px;
   vertical-align: middle;
   margin-right: 10px;
   cursor: pointer;
+  border: 1px solid transparent;
   box-sizing: content-box;
+  transition: border .2s, background .2s;
 }
 
 .toggle_view .wrapper div img.active {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 4px;
+  transition: border .2s, background .2s;
 }
 
 .board {

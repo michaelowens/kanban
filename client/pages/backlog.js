@@ -8,7 +8,7 @@ export default comp({
 
   data: () => {
     return {
-      isBacklog: false, // Switching between backlog & board view as test
+      isBacklog: true, // Switching between backlog & board view as test
       how: 'dynamically',
       installed: null,
       projects: [],
@@ -23,6 +23,15 @@ export default comp({
         {
           "id": 2,
           "title": "Item A2",
+        },
+        {
+          "id": 3,
+          "title": "Create bullshit",
+        },
+        {
+          "id": 4,
+          "title": "Lorem Ipsum card",
+          label: "Front-end",
         },
       ],
 
@@ -41,13 +50,13 @@ export default comp({
         B: [
           {
             "id": 3,
-            "title": "Item Marcel1",
+            "title": "Create bullshit",
           },
         ],
         C: [
           {
             "id": 4,
-            "title": "Djilano swekkin",
+            "title": "Lorem Ipsum card",
             label: "Front-end",
           },
         ]

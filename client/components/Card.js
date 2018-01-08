@@ -10,7 +10,7 @@ export default comp({
     mini: {
       type: Boolean,
       default: false
-    }
+    },
   },
 
   data () {

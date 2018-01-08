@@ -28,6 +28,10 @@
 	transform: translateY(-50%);
 }
 
+.card.completed {
+    text-decoration: line-through var(--black-subtle);
+}
+
 .card img.avatar {
     width: 24px;
     height: 24px;
@@ -109,7 +113,7 @@
 }
 
 .card.mini .header_card {
-    grid-template-columns: min-content auto max-content min-content;
+    grid-template-columns: min-content auto max-content max-content;
 }
 
 .card.mini span {

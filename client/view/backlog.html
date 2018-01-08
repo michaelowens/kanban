@@ -1,4 +1,4 @@
-<div class="canvas" v-if="!isBacklog">
+<div class="canvas">
   <div class="board_top_row">
     <h1>Backlog</h1>
     <div>
@@ -13,13 +13,13 @@
     <div class="wrapper">
       <div><span>Toggle view</span></div>
       <div>
-          <img src="assets/icons/toggle_kanban.svg" alt="Kanban" class="active">
-          <img src="assets/icons/toggle_list.svg" alt="List" @click="isBacklog = !isBacklog">
+          <img src="assets/icons/toggle_kanban.svg" alt="Kanban" :class="{active: !isBacklog}" @click="isBacklog = false">
+          <img src="assets/icons/toggle_list.svg" alt="List" :class="{active: isBacklog}" @click="isBacklog = true">
       </div>
     </div>
   </div>
 
-  <div class="board">
+  <div class="board" v-if="!isBacklog">
     <div class="col" v-for="(list, listName, index) in lists">
       <h2>To do</h2>
 
@@ -40,30 +40,8 @@
       </vddl-list>
     </div>
   </div>
-</div>
 
-<div class="canvas" v-else>
-  <div class="board_top_row">
-    <h1>Backlog</h1>
-    <div>
-      <a href="#" @click="$auth.login()" class="btn secondary with-icon">
-        <img src="assets/icons/plus.svg">
-        Add task
-      </a>
-    </div>
-  </div>
-
-  <div class="toggle_view">
-    <div class="wrapper">
-      <div><span>Toggle view</span></div>
-      <div>
-          <img src="assets/icons/toggle_kanban.svg" alt="Kanban"  @click="isBacklog = !isBacklog">
-          <img src="assets/icons/toggle_list.svg" alt="List" class="active">
-      </div>
-    </div>
-  </div>
-
-  <div class="board remove-grid">
+  <div class="board remove-grid" v-if="isBacklog && backlog.length">
     <div><h2>Initial release v1.0</h2> <small class="subtle">Due date: 31-12-2017 &nbsp; | &nbsp; Total estimated time: 1d 9h &nbsp; | &nbsp; 7 tasks </small></div>
 
     <div class="backlog_task_wrapper">
@@ -81,7 +59,7 @@
     </div>
   </div>
 
-  <div class="board remove-grid">
+  <div class="board remove-grid" v-else>
     <div><h2>Backlog</h2> <small class="subtle">0 tasks </small></div>
 
     <div class="backlog_task_wrapper minimal_cards">
